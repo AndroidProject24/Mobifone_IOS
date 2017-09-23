@@ -14,6 +14,12 @@
 		80657C9A1F762543005B244D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80657C991F762543005B244D /* Assets.xcassets */; };
 		80657C9D1F762543005B244D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80657C9B1F762543005B244D /* LaunchScreen.storyboard */; };
 		80657CA81F762543005B244D /* MobiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CA71F762543005B244D /* MobiTests.swift */; };
+		80657CC31F76363E005B244D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CB51F76363D005B244D /* BaseViewController.swift */; };
+		80657CC41F76363E005B244D /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CB71F76363D005B244D /* ServiceManager.swift */; };
+		80657CC51F76363E005B244D /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CBD1F76363E005B244D /* ModelUser.swift */; };
+		80657CC61F76363E005B244D /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CBE1F76363E005B244D /* SessionToken.swift */; };
+		80657CC71F76363E005B244D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CC11F76363E005B244D /* Constants.swift */; };
+		80657CC81F76363E005B244D /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CC21F76363E005B244D /* ServiceError.swift */; };
 		ED43F6AAA09D4A43DD34311A /* Pods_MobiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +46,12 @@
 		80657CA31F762543005B244D /* MobiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80657CA71F762543005B244D /* MobiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobiTests.swift; sourceTree = "<group>"; };
 		80657CA91F762543005B244D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80657CB51F76363D005B244D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		80657CB71F76363D005B244D /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		80657CBD1F76363E005B244D /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		80657CBE1F76363E005B244D /* SessionToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionToken.swift; sourceTree = "<group>"; };
+		80657CC11F76363E005B244D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		80657CC21F76363E005B244D /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		8EE78621C26D00D7DDEFE3BC /* Pods-Mobi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.release.xcconfig"; sourceTree = "<group>"; };
 		A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6455191756F287269F6FF54 /* Pods-MobiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiTests/Pods-MobiTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,12 +112,17 @@
 		80657C911F762543005B244D /* Mobi */ = {
 			isa = PBXGroup;
 			children = (
+				80657CB41F76363D005B244D /* Components */,
+				80657CBB1F76363D005B244D /* Lib */,
+				80657CBC1F76363E005B244D /* Models */,
+				80657CB61F76363D005B244D /* Services */,
+				80657CB81F76363D005B244D /* Utils */,
+				80657CB21F76363D005B244D /* ViewControllers */,
+				80657CB31F76363D005B244D /* VIews */,
+				80657CBF1F76363E005B244D /* Support */,
 				80657C921F762543005B244D /* AppDelegate.swift */,
-				80657C941F762543005B244D /* ViewController.swift */,
 				80657C961F762543005B244D /* Main.storyboard */,
-				80657C991F762543005B244D /* Assets.xcassets */,
 				80657C9B1F762543005B244D /* LaunchScreen.storyboard */,
-				80657C9E1F762543005B244D /* Info.plist */,
 			);
 			path = Mobi;
 			sourceTree = "<group>";
@@ -117,6 +134,95 @@
 				80657CA91F762543005B244D /* Info.plist */,
 			);
 			path = MobiTests;
+			sourceTree = "<group>";
+		};
+		80657CB21F76363D005B244D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				80657C941F762543005B244D /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		80657CB31F76363D005B244D /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		80657CB41F76363D005B244D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				80657CB51F76363D005B244D /* BaseViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		80657CB61F76363D005B244D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				80657CB71F76363D005B244D /* ServiceManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		80657CB81F76363D005B244D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				80657CB91F76363D005B244D /* Custom */,
+				80657CBA1F76363D005B244D /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		80657CB91F76363D005B244D /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		80657CBA1F76363D005B244D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80657CBB1F76363D005B244D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		80657CBC1F76363E005B244D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80657CBD1F76363E005B244D /* ModelUser.swift */,
+				80657CBE1F76363E005B244D /* SessionToken.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80657CBF1F76363E005B244D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				80657CC01F76363E005B244D /* Constants */,
+				80657C9E1F762543005B244D /* Info.plist */,
+				80657C991F762543005B244D /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		80657CC01F76363E005B244D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				80657CC11F76363E005B244D /* Constants.swift */,
+				80657CC21F76363E005B244D /* ServiceError.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		FC0B99204E1227E6E82B90DC /* Frameworks */ = {
@@ -330,8 +436,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80657CC81F76363E005B244D /* ServiceError.swift in Sources */,
 				80657C951F762543005B244D /* ViewController.swift in Sources */,
 				80657C931F762543005B244D /* AppDelegate.swift in Sources */,
+				80657CC51F76363E005B244D /* ModelUser.swift in Sources */,
+				80657CC31F76363E005B244D /* BaseViewController.swift in Sources */,
+				80657CC71F76363E005B244D /* Constants.swift in Sources */,
+				80657CC61F76363E005B244D /* SessionToken.swift in Sources */,
+				80657CC41F76363E005B244D /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
