@@ -16,10 +16,11 @@
 		80657CA81F762543005B244D /* MobiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CA71F762543005B244D /* MobiTests.swift */; };
 		80657CC31F76363E005B244D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CB51F76363D005B244D /* BaseViewController.swift */; };
 		80657CC41F76363E005B244D /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CB71F76363D005B244D /* ServiceManager.swift */; };
-		80657CC51F76363E005B244D /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CBD1F76363E005B244D /* ModelUser.swift */; };
-		80657CC61F76363E005B244D /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CBE1F76363E005B244D /* SessionToken.swift */; };
+		80657CC51F76363E005B244D /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CBD1F76363E005B244D /* UserObj.swift */; };
+		80657CC61F76363E005B244D /* SessionTokenObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CBE1F76363E005B244D /* SessionTokenObj.swift */; };
 		80657CC71F76363E005B244D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CC11F76363E005B244D /* Constants.swift */; };
 		80657CC81F76363E005B244D /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CC21F76363E005B244D /* ServiceError.swift */; };
+		807662E51F7952520065656A /* BaseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662E41F7952520065656A /* BaseObj.swift */; };
 		ED43F6AAA09D4A43DD34311A /* Pods_MobiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,10 +49,11 @@
 		80657CA91F762543005B244D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80657CB51F76363D005B244D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		80657CB71F76363D005B244D /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		80657CBD1F76363E005B244D /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
-		80657CBE1F76363E005B244D /* SessionToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionToken.swift; sourceTree = "<group>"; };
+		80657CBD1F76363E005B244D /* UserObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
+		80657CBE1F76363E005B244D /* SessionTokenObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTokenObj.swift; sourceTree = "<group>"; };
 		80657CC11F76363E005B244D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		80657CC21F76363E005B244D /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		807662E41F7952520065656A /* BaseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObj.swift; sourceTree = "<group>"; };
 		8EE78621C26D00D7DDEFE3BC /* Pods-Mobi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.release.xcconfig"; sourceTree = "<group>"; };
 		A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6455191756F287269F6FF54 /* Pods-MobiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiTests/Pods-MobiTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,8 +202,9 @@
 		80657CBC1F76363E005B244D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				80657CBD1F76363E005B244D /* ModelUser.swift */,
-				80657CBE1F76363E005B244D /* SessionToken.swift */,
+				807662E41F7952520065656A /* BaseObj.swift */,
+				80657CBD1F76363E005B244D /* UserObj.swift */,
+				80657CBE1F76363E005B244D /* SessionTokenObj.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 		80657CBF1F76363E005B244D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				809E7D9E1F76D2D000A0685B /* Resource */,
 				80657CC01F76363E005B244D /* Constants */,
 				80657C9E1F762543005B244D /* Info.plist */,
 				80657C991F762543005B244D /* Assets.xcassets */,
@@ -223,6 +227,37 @@
 				80657CC21F76363E005B244D /* ServiceError.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		809E7D9E1F76D2D000A0685B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				809E7D9F1F76D2D000A0685B /* Data */,
+				809E7DA01F76D2D000A0685B /* Fonts */,
+				809E7DA21F76D2D000A0685B /* Music */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		809E7D9F1F76D2D000A0685B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		809E7DA01F76D2D000A0685B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		809E7DA21F76D2D000A0685B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		FC0B99204E1227E6E82B90DC /* Frameworks */ = {
@@ -438,11 +473,12 @@
 			files = (
 				80657CC81F76363E005B244D /* ServiceError.swift in Sources */,
 				80657C951F762543005B244D /* ViewController.swift in Sources */,
+				807662E51F7952520065656A /* BaseObj.swift in Sources */,
 				80657C931F762543005B244D /* AppDelegate.swift in Sources */,
-				80657CC51F76363E005B244D /* ModelUser.swift in Sources */,
+				80657CC51F76363E005B244D /* UserObj.swift in Sources */,
 				80657CC31F76363E005B244D /* BaseViewController.swift in Sources */,
 				80657CC71F76363E005B244D /* Constants.swift in Sources */,
-				80657CC61F76363E005B244D /* SessionToken.swift in Sources */,
+				80657CC61F76363E005B244D /* SessionTokenObj.swift in Sources */,
 				80657CC41F76363E005B244D /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,7 +635,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8Q3UHU5AU;
-				INFOPLIST_FILE = Mobi/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Mobi/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toanitc.Mobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -615,7 +651,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8Q3UHU5AU;
-				INFOPLIST_FILE = Mobi/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Mobi/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toanitc.Mobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";

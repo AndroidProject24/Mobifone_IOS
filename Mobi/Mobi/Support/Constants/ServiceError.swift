@@ -19,8 +19,4 @@ enum CodeResponse: Int {
     NO_DATA = 100
 }
 
-enum CodeResult: Int {
-    case CODE_PROCESSING = 0
-    case CODE_OK = 1
-    case CODE_AUTHORIZING = 1004
-}
+

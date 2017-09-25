@@ -12,12 +12,7 @@ class SessionToken: NSObject {
 	var pageChangeMenu: Int = -1
 	var pageMenu: Int = -1
 
-	// Account
-	var modelUser: ModelUser?
-	var modelSetting: settingUser?
-	var resultTV: resultLiveTV?
-	var resultCU: resultComingUp?
-
+	
 	class var sharedInstance: SessionToken {
 		struct Singleton {
 			static let instance = SessionToken()

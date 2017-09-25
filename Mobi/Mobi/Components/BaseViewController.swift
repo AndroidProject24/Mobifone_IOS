@@ -69,8 +69,8 @@ class BaseViewController: UIViewController {
     
     func changeNavigationBarToDefaultStyle() {
         
-        let attributes:NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes as? [String : AnyObject]
+        let attributes:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes as? [NSAttributedStringKey : Any]
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor.init(hexString: "b0006d")
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -78,8 +78,8 @@ class BaseViewController: UIViewController {
     
     func changeNavigationBarToTransparentStyle() {
         
-        let attributes:NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes as? [String : AnyObject]
+        let attributes:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes as? [NSAttributedStringKey : Any]
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.view.backgroundColor = UIColor.clear
@@ -109,8 +109,8 @@ class BaseViewController: UIViewController {
     }
     
     func setNavigationBarTitleColor(_ color: UIColor) {
-        let attributes:NSDictionary = [NSForegroundColorAttributeName: color]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes as? [String : AnyObject]
+        let attributes:NSDictionary = [NSAttributedStringKey.foregroundColor: color]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes as? [NSAttributedStringKey : Any]
     }
     
     func hideLeftButton() {

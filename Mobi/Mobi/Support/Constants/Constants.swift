@@ -14,27 +14,22 @@ import SwiftOverlays
 let APPDELEGATE: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 // MARK: - URL
-let urlAPI: String = "http://lv-api.acuteksolutions.com/cxf/ws/messagebus/rest/%@/Beesmart/"
-let urlAPILogin: String = String(format: urlAPI, "authorize")
-let urlImage = String(format: "http://bsdev.acuteksolutions.com/restapi/rest/%d/images/", (SessionToken.sharedInstance.modelUser?.result?.regionId)!)
-let macAddress: String = "00000000ffaa"
+let urlAPI: String = "http://n3t.top/test/api/"
+let urlImage = String(format: "http://bsdev.acuteksolutions.com/restapi/rest/%d/images/")
 
 
-// MARK: - Plist constant
-let watchTvState: String = "watchTvState"
-let fnaState: String = "fnaState"
-let moviesState: String = "moviesState"
-let roomControlState: String = "roomControlState"
-let conciergeState: String = "conciergeState"
-
-let kConcierge: String = "Concierge"
-let kLiveTV: String = "Live TV"
-let kMovies: String = "Movies"
-let kFood: String = "Food & Activities"
-let kRoom: String = "Room Control"
 
 // MARK: - Array string slide menu
-let arrayStringMenuLeft: [String]   = ["CONCIERGE", "LIVE TV", "MOVIES", "FOOD & ACTIVTIES", "ROOM CONTROL", "SETTINGS"]
+let arrayStringMenuLeft:[[String : [[String]]]]   = [["M_CONTROL" : [["M_HOME", "M_STORE", "M_PROMOTION", "M_LIABILITIES", "M_PROCEDURE", "M_UPLOAD_PICTURE", "M_PORFILE"],
+                                                                    ["I_HOME", "I_STORE", "I_PROMOTION", "I_LIABILITIES", "I_PROCEDURE", "I_UPLOAD_PICTURE", "I_PORFILE"]],
+                                                            "M_HELP" : [["M_CONTAST", "M_LOGOUT"], ["I_CONTAST", "I_LOGOUT"]]
+]]
+let arrayStringMenuInMain: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOTION", "M_LIABILITIES", "M_UPLOAD_PICTURE", "M_VAS", "M_PAY_THE_BILL"],
+                                            ["I_STORE", "I_PROCEDURE", "I_PROMOTION", "I_LIABILITIES", "I_UPLOAD_PICTURE", "I_VAS", "I_PAY_THE_BILL"]
+]
+let arrayStringMenuInMainForGest: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOTION", "M_PAY_THE_BILL"],
+                                                   ["I_STORE", "I_PROCEDURE", "I_PROMOTION", "I_PAY_THE_BILL"]
+]
 
 // MARK: - Height paging menu
 let kHeightMenu: CGFloat = 103
@@ -91,11 +86,4 @@ enum SideMenu: Int {
     case settings
 }
 
-enum TopMenu: Int {
-    case home = 0
-    case concierge
-    case liveTV
-    case movies
-    case food
-    case room
-}
+
