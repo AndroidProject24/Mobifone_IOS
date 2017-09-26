@@ -21,6 +21,9 @@
 		80657CC71F76363E005B244D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CC11F76363E005B244D /* Constants.swift */; };
 		80657CC81F76363E005B244D /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657CC21F76363E005B244D /* ServiceError.swift */; };
 		807662E51F7952520065656A /* BaseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662E41F7952520065656A /* BaseObj.swift */; };
+		807662E71F7A14E10065656A /* TypeSimObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662E61F7A14E10065656A /* TypeSimObj.swift */; };
+		807662E91F7A4B3E0065656A /* SimObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662E81F7A4B3E0065656A /* SimObj.swift */; };
+		807662EB1F7A74A10065656A /* CategoryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662EA1F7A74A10065656A /* CategoryObj.swift */; };
 		ED43F6AAA09D4A43DD34311A /* Pods_MobiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		80657CC11F76363E005B244D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		80657CC21F76363E005B244D /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		807662E41F7952520065656A /* BaseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObj.swift; sourceTree = "<group>"; };
+		807662E61F7A14E10065656A /* TypeSimObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSimObj.swift; sourceTree = "<group>"; };
+		807662E81F7A4B3E0065656A /* SimObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimObj.swift; sourceTree = "<group>"; };
+		807662EA1F7A74A10065656A /* CategoryObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryObj.swift; sourceTree = "<group>"; };
 		8EE78621C26D00D7DDEFE3BC /* Pods-Mobi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.release.xcconfig"; sourceTree = "<group>"; };
 		A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6455191756F287269F6FF54 /* Pods-MobiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiTests/Pods-MobiTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +211,9 @@
 				807662E41F7952520065656A /* BaseObj.swift */,
 				80657CBD1F76363E005B244D /* UserObj.swift */,
 				80657CBE1F76363E005B244D /* SessionTokenObj.swift */,
+				807662E61F7A14E10065656A /* TypeSimObj.swift */,
+				807662E81F7A4B3E0065656A /* SimObj.swift */,
+				807662EA1F7A74A10065656A /* CategoryObj.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -473,11 +482,14 @@
 			files = (
 				80657CC81F76363E005B244D /* ServiceError.swift in Sources */,
 				80657C951F762543005B244D /* ViewController.swift in Sources */,
+				807662E91F7A4B3E0065656A /* SimObj.swift in Sources */,
 				807662E51F7952520065656A /* BaseObj.swift in Sources */,
 				80657C931F762543005B244D /* AppDelegate.swift in Sources */,
 				80657CC51F76363E005B244D /* UserObj.swift in Sources */,
 				80657CC31F76363E005B244D /* BaseViewController.swift in Sources */,
 				80657CC71F76363E005B244D /* Constants.swift in Sources */,
+				807662E71F7A14E10065656A /* TypeSimObj.swift in Sources */,
+				807662EB1F7A74A10065656A /* CategoryObj.swift in Sources */,
 				80657CC61F76363E005B244D /* SessionTokenObj.swift in Sources */,
 				80657CC41F76363E005B244D /* ServiceManager.swift in Sources */,
 			);

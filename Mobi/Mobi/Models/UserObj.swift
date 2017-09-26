@@ -8,6 +8,8 @@
 
 import ObjectMapper
 
+
+/// <#Description#>
 class UserObj: Mappable {
     required init?(map: Map) {
         
@@ -29,7 +31,9 @@ class UserObj: Mappable {
     }
 }
 
- class UserMaper: BaseObj {
+
+ /// <#Description#>
+ class UserMapper: BaseObj {
     var detail: UserObj?
 
     override func mapping(map: Map) {

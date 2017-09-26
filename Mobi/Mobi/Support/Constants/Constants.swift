@@ -30,6 +30,7 @@ let arrayStringMenuInMain: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOT
 let arrayStringMenuInMainForGest: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOTION", "M_PAY_THE_BILL"],
                                                    ["I_STORE", "I_PROCEDURE", "I_PROMOTION", "I_PAY_THE_BILL"]
 ]
+let arrayStringFirstNumber: [String]    = ["090", "093", "083", "0120", "0121", "0122", "0126", "0128"]
 
 // MARK: - Height paging menu
 let kHeightMenu: CGFloat = 103
@@ -86,4 +87,34 @@ enum SideMenu: Int {
     case settings
 }
 
+enum StoreNumber: Int {
+    case TraSau = 0
+    case CamKet
+    case TraTruoc
+    case TraTruocSoDep
+    
+    func getString() -> String {
+        switch self {
+        case .TraSau:
+            return "trasau"
+        case .CamKet:
+            return "camket"
+        case .TraTruoc:
+            return "tratruoc"
+        case .TraTruocSoDep:
+            return "tratruocsodep"
+        }
+    }
+}
 
+enum CategoryType: Int {
+    case Procedure_Nomal = 113
+    case Procedure_HM_Tra_Sau = 119
+    case Procedure_HM_Tra_Truoc = 120
+    case CTKM_Nomal = 112
+    case CTKM_Tra_Sau = 116
+    case CTKM_KMTS_Doanh_Nghiep = 124
+    case CTKM_KMTS_Ca_Nhan = 123
+    case CTKM_Cam_Ket_So_Dep = 117
+    case CTKM_KM_Nap_The_Theo_Ngay = 118
+}
