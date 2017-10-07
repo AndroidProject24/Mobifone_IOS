@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 class ServiceManager {
-    public static let sharedInstance: ServiceManager = {
+    public static let shared: ServiceManager = {
         return ServiceManager()
     }()
     
@@ -30,7 +30,7 @@ class ServiceManager {
     ///   - password: <#password description#>
     ///   - username: <#username description#>
     ///   - _completion: <#_completion description#>
-    func loginUser(byPassword password: String?, byUsername username: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: UserObj?) -> Void) {
+    func loginUser(byPassword password: String?, byUsername username: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: UserObj?) -> Void, _failed:@escaping(_ message: String?) -> Void) {
         
         let url = urlAPI + "dangnhap"
         let parameters: Parameters = [
@@ -43,11 +43,17 @@ class ServiceManager {
             case .success:
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<UserMapper>().map(JSONObject: data)
+                   
+                    feature?.error = Int(String(describing: data["error"]!))
                     
-                    _completion(.CODE_SUCCESS, feature!.detail)
+                    if (feature?.error)! > 0 {
+                        _failed(feature?.reason!)
+                    } else {
+                        _completion(.CODE_SUCCESS, feature!.detail)
+                    }
                 }
             case .failure( _):
-                 _completion(.CODE_FAILURE, nil)
+                 _failed("")
             }
         }
     }
@@ -88,7 +94,7 @@ class ServiceManager {
     ///   - username: <#username description#>
     ///   - email: <#email description#>
     ///   - _completion: <#_completion description#>
-    func registerUser(byPassword password: String?, byUsername username: String?, byEmail email: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: UserObj?) -> Void) {
+    func registerUser(byPassword password: String?, byUsername username: String?, byEmail email: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: UserObj?) -> Void, _failed:@escaping(_ message: String?) -> Void) {
         
         let url = urlAPI + "dangkyuser"
         let parameters: Parameters = [
@@ -101,12 +107,17 @@ class ServiceManager {
             switch response.result {
             case .success:
                 if let data = response.result.value as? [String:Any] {
-                    let feature = Mapper<UserMapper>().map(JSONObject: data)
                     
-                    _completion(.CODE_SUCCESS, feature!.detail)
+                    let feature = Mapper<UserMapper>().map(JSONObject: data)
+                    feature?.error = Int(String(describing: data["error"]!))
+                    if feature!.error > 0 {
+                        _failed(feature?.reason!)
+                    } else {
+                        _completion(.CODE_SUCCESS, nil)
+                    }
                 }
             case .failure( _):
-                _completion(.CODE_FAILURE, nil)
+                _failed("Email đã tồn tại")
             }
         }
     }

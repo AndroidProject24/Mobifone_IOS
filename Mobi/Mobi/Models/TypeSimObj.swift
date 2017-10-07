@@ -32,7 +32,7 @@ class TypeSimMapper: BaseObj {
     override func mapping(map: Map) {
         detail <- map["data"]
         idk <- map["idk"]
-        error <- map["error"]
+//        error <- map["error"]
         reason <- map["reason"]
     }
 }

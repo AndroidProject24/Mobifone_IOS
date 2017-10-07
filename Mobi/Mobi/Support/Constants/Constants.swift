@@ -11,6 +11,7 @@ import UIKit
 import EZSwiftExtensions
 import SwiftOverlays
 
+let UTIL: Uitl = Uitl.sharedInstance
 let APPDELEGATE: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 // MARK: - URL
@@ -20,10 +21,13 @@ let urlImage = String(format: "http://bsdev.acuteksolutions.com/restapi/rest/%d/
 
 
 // MARK: - Array string slide menu
-let arrayStringMenuLeft:[[String : [[String]]]]   = [["M_CONTROL" : [["M_HOME", "M_STORE", "M_PROMOTION", "M_LIABILITIES", "M_PROCEDURE", "M_UPLOAD_PICTURE", "M_PORFILE"],
-                                                                    ["I_HOME", "I_STORE", "I_PROMOTION", "I_LIABILITIES", "I_PROCEDURE", "I_UPLOAD_PICTURE", "I_PORFILE"]],
-                                                            "M_HELP" : [["M_CONTAST", "M_LOGOUT"], ["I_CONTAST", "I_LOGOUT"]]
-]]
+let arrayStringMenuLeft:[[[String]]]   = [[],
+                                          [["M_HOME", "M_STORE", "M_PROMOTION", "M_LIABILITIES", "M_PROCEDURE", "M_UPLOAD_PICTURE", "M_PORFILE"],
+                                           ["I_HOME", "I_STORE", "I_PROMOTION", "I_LIABILITIES", "I_PROCEDURE", "I_UPLOAD_PICTURE", "I_PORFILE"]
+                                          ],
+                                          [["M_HELP","M_CONTAST", "M_LOGOUT"], ["","I_CONTAST", "I_LOGOUT"]]]
+                                                     
+
 let arrayStringMenuInMain: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOTION", "M_LIABILITIES", "M_UPLOAD_PICTURE", "M_VAS", "M_PAY_THE_BILL"],
                                             ["I_STORE", "I_PROCEDURE", "I_PROMOTION", "I_LIABILITIES", "I_UPLOAD_PICTURE", "I_VAS", "I_PAY_THE_BILL"]
 ]

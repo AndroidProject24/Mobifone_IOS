@@ -19,6 +19,6 @@ class BaseObj: NSObject, Mappable {
     }
 
     var idk : String?
-    var error : NSInteger?
-    var reason : AnyObject?
+    var error : Int!
+    var reason : String?
 }
