@@ -34,6 +34,11 @@ let arrayStringMenuInMain: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOT
 let arrayStringMenuInMainForGest: [[String]]    = [["M_STORE", "M_PROCEDURE", "M_PROMOTION", "M_PAY_THE_BILL"],
                                                    ["I_STORE", "I_PROCEDURE", "I_PROMOTION", "I_PAY_THE_BILL"]
 ]
+
+let arrayStringSubMenuInSim: [[String]]    = [["M_TRA_TRUOC", "M_TRA_SAU_DOANH_NGHIEP", "M_TRA_SAU", "M_CAM_KET_SO_DEP", "M_KIEM_TRA_TINH_TRANG"],
+                                                   ["I_TRA_TRUOC", "I_TRA_SAU_DOANH_NGHIEP", "I_TRA_SAU", "I_CAM_KET_SO_DEP", "I_KIEM_TRA_TINH_TRANG"]
+]
+
 let arrayStringFirstNumber: [String]    = ["090", "093", "083", "0120", "0121", "0122", "0126", "0128"]
 
 // MARK: - Height paging menu

@@ -18,3 +18,8 @@
 "M_CONTAST" = "Liên hệ";
 "M_LOGOUT" = "Thoát";
 "M_HELP" = "Help";
+"M_TRA_TRUOC" = "Trả Trước";
+"M_TRA_SAU_DOANH_NGHIEP" = "Trả Sau Doanh Nghiệp";
+"M_TRA_SAU" = "Trả Sau";
+"M_CAM_KET_SO_DEP" = "Cam Kết Số Đẹp";
+"M_KIEM_TRA_TINH_TRANG" = "Kiểm Tra Tình Trạng";

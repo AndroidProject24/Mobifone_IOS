@@ -10,7 +10,7 @@ import UIKit
 
 
 class LoginVC: BaseViewController {
-
+    
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btLogin: UIButton!
@@ -30,6 +30,7 @@ class LoginVC: BaseViewController {
         self.btLoginForGuest.defaultButton()
         
         
+    
 //        emailField.detail = "Error, incorrect email"
 //        emailField.textColor = .black
 //        emailField.isClearIconButtonEnabled = true
@@ -52,8 +53,9 @@ class LoginVC: BaseViewController {
     @IBAction func onTapBtLogin(_ sender: UIButton) {
         self.showLoadingIndicator(inView: self.view, title: "")
         ServiceManager.shared.loginUser(byPassword: self.txtPassword!.text, byUsername: self.txtUserName!.text, _completion: { (CodeRespone, userObj) in
-            userObj?.isGuest = true
+            userObj?.isGuest = false
             UserObj.currentUserProfile = userObj!
+            APPDELEGATE.resetToRootViewHome(onComplete: nil)
             
             self.dismissLoadingIndicator(inView: self.view)
         }, _failed: { (strMessage) in
@@ -67,6 +69,7 @@ class LoginVC: BaseViewController {
     @IBAction func onTapBtLoginGuest(_ sender: UIButton) {
         let user = UserObj()
         user.isGuest = true
+        UserObj.currentUserProfile = user
         
         (UIApplication.shared.delegate as! AppDelegate).resetToRootViewHome { (ok) in
             

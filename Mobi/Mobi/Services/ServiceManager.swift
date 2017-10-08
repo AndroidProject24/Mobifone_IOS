@@ -250,14 +250,14 @@ class ServiceManager {
     }
     
     
-    func category(byType type:CategoryType, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?) -> Void) {
+    func category(byType type:CategoryType, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [CategoryObj]?) -> Void) {
         let url = urlAPI + "theloai/\(type)"
         
         Alamofire.request(url, method: .get).responseJSON { response in
             switch response.result {
             case .success:
                 if let data = response.result.value as? [String:Any] {
-                    let feature = Mapper<SimMapper>().map(JSONObject: data)
+                    let feature = Mapper<CategoryMapper>().map(JSONObject: data)
                     
                     _completion(.CODE_SUCCESS, feature!.detail)
                 }
@@ -266,5 +266,30 @@ class ServiceManager {
             }
         }
     }
+    
+    
+//    MARK: - CONG NO
+    func listCongNo(_completion:@escaping(_ code: CodeResponse, _ dataResponse: [CongNoObj]?) -> Void, _failed:@escaping(_ message: String?) -> Void) {
+        
+        let url = urlAPI + "congno"
+        let parameters: Parameters = [
+            "auth_code" : UserObj.currentUserProfile.auth_code!,
+            "iduser" : UserObj.currentUserProfile.id!
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value as? [String:Any] {
+                    let feature = Mapper<CongNoMapper>().map(JSONObject: data)
+                    
+                    _completion(.CODE_SUCCESS, feature?.detail)
+                }
+            case .failure( _):
+                _completion(.CODE_FAILURE, nil)
+            }
+        }
+    }
+    
     
 }

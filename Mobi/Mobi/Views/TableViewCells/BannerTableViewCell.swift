@@ -24,6 +24,9 @@ class BannerTableViewCell: UITableViewCell {
             self.lbUserName.text = UserObj.currentUserProfile.username
             self.lbEmail.text = UserObj.currentUserProfile.email
         }
+        
+        self.imgAvarta.layer.cornerRadius = self.imgAvarta.bounds.size.width / 2
+        self.imgAvarta.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

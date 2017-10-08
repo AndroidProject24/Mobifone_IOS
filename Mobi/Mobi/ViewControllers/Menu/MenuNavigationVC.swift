@@ -8,6 +8,8 @@
 
 import UIKit
 
+var homeViewController:HomeVC?
+
 class MenuNavigationVC: UINavigationController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,12 +19,6 @@ class MenuNavigationVC: UINavigationController, UINavigationControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-    }
-    
-    func showMenu () {
-        self.view.endEditing(true)
-        self.frostedViewController.view.endEditing(true)
-        self.frostedViewController.presentMenuViewController()
     }
     
     @objc func panGestureRecognized(_ gesture: UIPanGestureRecognizer) {

@@ -183,20 +183,4 @@ class BaseViewController: UIViewController {
             return nil
         }
     }
-
-    
-    /**
-     Setup DropDown list
-     */
-//    func setupDropDown(withList list: [String], withIndex index: Int, inView view: UIView, withWidth width: CGFloat, selectionAction: ((Index, String) -> Void)?) {
-//        self.dropDown?.anchorView = view
-//        self.dropDown?.direction = .any
-//        self.dropDown?.topOffset = CGPoint(x: view.frame.width - width, y: view.bounds.height)
-//        self.dropDown?.dataSource = list
-//        self.dropDown?.width = width
-//        self.dropDown?.selectRow(at: index)
-//        self.dropDown?.selectionAction = selectionAction
-//        self.dropDown?.show()
-//    }
-
 }

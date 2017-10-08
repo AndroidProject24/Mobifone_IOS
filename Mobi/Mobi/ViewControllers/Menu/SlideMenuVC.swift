@@ -78,10 +78,42 @@ extension SlideMenuVC : UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        UserObj.currentUserProfile = UserObj()
-        APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "MenuNavigationVC") as! MenuNavigationVC
         
-//        self.frostedViewController.contentViewController = navigationController
-//        self.frostedViewController.hideMenuViewController()
+        
+        if indexPath.section == 0 {
+            // Profile
+            
+        } else if indexPath.section == 1{
+            // Store Sim
+            if indexPath.row == 1 {
+                let subHomeVC = SubHomeVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home, subHomeVC]
+            }
+
+            // Congno
+            if indexPath.row == 3 {
+                let congNoVC = CongNoVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home, congNoVC]
+            }
+            
+        } else {
+            // ConTact
+            if indexPath.row == 1 {
+                let contactVC = ContactVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home,contactVC]
+            }
+            
+            if indexPath.row == 2 {
+                UserObj.currentUserProfile = UserObj()
+                APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+            }
+        }
+        
+        self.frostedViewController.contentViewController = navigationController
+        self.frostedViewController.hideMenuViewController()
     }
 }

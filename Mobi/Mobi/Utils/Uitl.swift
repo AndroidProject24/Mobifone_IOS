@@ -54,6 +54,20 @@ class Uitl: NSObject {
             return UIImage(named: "ic_call")!
         } else if "I_LOGOUT" == imageName {
             return UIImage(named: "ic_exit")!
+        } else if "I_VAS" == imageName {
+            return UIImage(named: "ic_vas")!
+        } else if "I_PAY_THE_BILL" == imageName {
+            return UIImage(named: "ic_payment")!
+        } else if "I_TRA_TRUOC" == imageName {
+            return UIImage(named: "ic_tratruoc")!
+        } else if "I_TRA_SAU_DOANH_NGHIEP" == imageName {
+            return UIImage(named: "ic_tratruocdoanhnghiep")!
+        } else if "I_TRA_SAU" == imageName {
+            return UIImage(named: "ic_trasau")!
+        } else if "I_CAM_KET_SO_DEP" == imageName {
+            return UIImage(named: "ic_camket")!
+        } else if "I_KIEM_TRA_TINH_TRANG" == imageName {
+            return UIImage(named: "ic_kiemtra")!
         } else  {
             return UIImage()
         }

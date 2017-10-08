@@ -178,6 +178,18 @@ extension UIViewController {
 
 extension UIView {
     
+    func makeCornerAndShadowAndBorder(_ cornerRadius: CGFloat, shadowRadius: CGFloat, shadowOpacity: Float, borderWidth: CGFloat) {
+        self.layer.masksToBounds = false;
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = shadowOpacity
+        self.layer.shadowRadius = shadowRadius
+        self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        self.layer.cornerRadius = cornerRadius
+        
+        self.layer.borderWidth   = borderWidth
+        self.layer.borderColor   = UIColor.lightGray.cgColor
+    }
+    
     func makeCornerAndShadow(_ cornerRadius: CGFloat, shadowRadius: CGFloat, shadowOpacity: Float) {
         self.layer.masksToBounds = false;
         self.layer.shadowColor = UIColor.black.cgColor
@@ -217,6 +229,7 @@ extension UIView {
         let minutes = (ti / 60) % 60
         return String(format: "%0.2d:%0.2d",minutes,seconds)
     }
+    
 }
 
 extension UIButton {
