@@ -173,7 +173,7 @@ class BaseViewController: UIViewController {
     }
 
     func dismissLoadingIndicator(inView view: UIView, completion: (() -> Void)? = nil) {
-        HUDManager.dismissHUD(view, completion: completion)
+        HUDManager.dismissHUD(view)
     }
     
     func getVisibleViewController() -> UIViewController? {

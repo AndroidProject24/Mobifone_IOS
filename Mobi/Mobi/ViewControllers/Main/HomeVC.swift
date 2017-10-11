@@ -82,29 +82,30 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         
         // Thu Tuc
         if indexPath.row == 1 {
-
+            let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabbarVC") as! BaseTabBarController
+            let tabViewController1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+            let tabViewController2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+            tabBarVC.navigationItem.title = NSLocalizedString("M_PROCEDURE", comment: "")
+                
+                tabViewController2.categoryType = .Procedure_HM_Tra_Sau
+            tabBarVC.viewControllers = [tabViewController1, tabViewController2]
+            
+            tabViewController1.tabBarItem = UITabBarItem(
+                title: NSLocalizedString("M_TRA_TRUOC", comment: ""),
+                image: UIImage(named: "ic_home"),
+                tag: 1)
+            tabViewController2.tabBarItem = UITabBarItem(
+                title: NSLocalizedString("M_TRA_SAU", comment: ""),
+                image:UIImage(named: "ic_business") ,
+                tag:2)
+            
+            self.pushVC(tabBarVC)
         }
 
         // Khuyen Mai
         if indexPath.row == 2 {
-            let test = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabbarVC") as! BaseTabBarController
-            let tabViewController1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC")
-            let tabViewController2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") 
-            test.viewControllers = [tabViewController1, tabViewController2]
-            test.navigationItem.title = "dddd"
-            
-            
-            
-            tabViewController1.tabBarItem = UITabBarItem(
-                title: "Pie",
-                image: UIImage(),
-                tag: 1)
-            tabViewController2.tabBarItem = UITabBarItem(
-                title: "Pizza",
-                image:UIImage() ,
-                tag:2)
-            
-            self.pushVC(test)
+            let promotionVC = PromotionVC.initWithStoryboard()
+            self.pushVC(promotionVC)
         }
         
         // Cong No

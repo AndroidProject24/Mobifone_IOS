@@ -20,7 +20,7 @@ class CongNoTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.viewMain.makeCornerAndShadowAndBorder(5, shadowRadius: 3, shadowOpacity: 0.5, borderWidth: 1)
+        self.viewMain.makeCornerAndShadowAndBorder(5, shadowRadius: 2, shadowOpacity: 0.3, borderWidth: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

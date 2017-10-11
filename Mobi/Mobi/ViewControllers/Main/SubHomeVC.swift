@@ -52,6 +52,7 @@ extension SubHomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let listNumberVC = StoreNumberVC.initWithStoryboard()
+        self.pushVC(listNumberVC)
     }
 }

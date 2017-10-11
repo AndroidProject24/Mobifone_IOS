@@ -1,19 +1,20 @@
 //
-//  NewsTableCell.swift
+//  ListStoreNumberTableCell.swift
 //  Mobi
 //
-//  Created by HeoConUnIn on 10/8/17.
+//  Created by HeoConUnIn on 10/11/17.
 //  Copyright © 2017 HoangSon. All rights reserved.
 //
 
 import UIKit
-import AlamofireImage
 
-class NewsTableCell: UITableViewCell {
+class ListStoreNumberTableCell: UITableViewCell {
 
     @IBOutlet weak var viewMains: UIView!
     @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var imgTitle: UIImageView!
+    @IBOutlet weak var lbPrice: UILabel!
+    @IBOutlet weak var lbGoiCuoc: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +27,11 @@ class NewsTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    func config(cateObj: CategoryObj) {
-        self.lbTitle.text = cateObj.name
-        self.imgTitle.af_setImage(withURL: URL(string: cateObj.image!)!)
+    
+    func config(simObj: SimObj) {
+        self.lbTitle.text = simObj.name
+        self.lbPrice.text = "\(String(describing: simObj.price!)) VNĐ"
+        self.lbGoiCuoc.text = simObj.originPrice
     }
+
 }

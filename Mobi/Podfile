@@ -12,7 +12,7 @@ target 'Mobi' do
     pod 'AlamofireImage'
     
     pod 'EZSwiftExtensions'
-    pod 'SlideMenuControllerSwift'
+#    pod 'PageMenu'
     pod 'SwiftOverlays', '~> 3.0.0'
     pod 'PopupDialog', '~> 0.5'
 #    pod 'Material', '~> 2.0'

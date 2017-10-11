@@ -91,12 +91,27 @@ extension SlideMenuVC : UITableViewDelegate, UITableViewDataSource {
                 let home = HomeVC.initWithStoryboard()
                 navigationController.viewControllers = [home, subHomeVC]
             }
+            
+            // Promotion
+            if indexPath.row == 2 {
+                let p = PromotionVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home, p]
+            }
 
             // Congno
             if indexPath.row == 3 {
                 let congNoVC = CongNoVC.initWithStoryboard()
                 let home = HomeVC.initWithStoryboard()
                 navigationController.viewControllers = [home, congNoVC]
+            }
+            
+            
+            // Thu tuc
+            if indexPath.row == 4 {
+                let newsVC = NewsVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home, newsVC]
             }
             
         } else {

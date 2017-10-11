@@ -218,13 +218,14 @@ class ServiceManager {
     ///   - firstNumber: <#firstNumber description#>
     ///   - typeNumber: <#typeNumber description#>
     ///   - _completion: <#_completion description#>
-    func searchSim(bySearch search: String?, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?) -> Void) {
+    func searchSim(bySearch search: String?, byPage page: Int, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?, _ nextLink: String) -> Void) {
         let url = urlAPI + "timsim"
         let parameters: Parameters = [
             "dau" : firstNumber!,
             "kho" : store!,
             "dang" : typeNumber!,
-            "search" : search!
+            "search" : search!,
+            "page" : page
         ]
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
             switch response.result {
@@ -232,10 +233,10 @@ class ServiceManager {
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<SimMapper>().map(JSONObject: data)
                     
-                    _completion(.CODE_SUCCESS, feature!.detail)
+                    _completion(.CODE_SUCCESS, feature!.detail, (feature?.nextLink)!)
                 }
             case .failure( _):
-                _completion(.CODE_FAILURE, nil)
+                _completion(.CODE_FAILURE, nil, "")
             }
         }
     }
@@ -251,7 +252,7 @@ class ServiceManager {
     
     
     func category(byType type:CategoryType, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [CategoryObj]?) -> Void) {
-        let url = urlAPI + "theloai/\(type)"
+        let url = urlAPI + "theloai/\(type.rawValue)"
         
         Alamofire.request(url, method: .get).responseJSON { response in
             switch response.result {
