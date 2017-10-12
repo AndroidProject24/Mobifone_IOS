@@ -11,7 +11,7 @@ import UIKit
 class StoreNumberVC: BaseViewController {
 
     var pageMenu : CAPSPageMenu?
-    var indexPage : Int?
+    var indexPage : Int? = 0
     
     
     static func initWithStoryboard() -> StoreNumberVC{
@@ -70,13 +70,15 @@ class StoreNumberVC: BaseViewController {
     
     pageMenu?.delegate = self
     
+        pageMenu?.moveToPage(self.indexPage!)
+       
     self.view.addSubview((pageMenu?.view)!)
     
 }
 
 override func setupUI() {
     super .setupUI()
-    self.navigationItem.title = NSLocalizedString("M_PROMOTION", comment: "")
+    self.navigationItem.title = NSLocalizedString("M_STORE", comment: "")
 }
 
     override func didReceiveMemoryWarning() {

@@ -292,5 +292,28 @@ class ServiceManager {
         }
     }
     
+//    MARK: - CHECK PHONE NUMBER
+    func checkNumberPhone(byString stringSearch: String, _completion:@escaping(_ code: CodeResponse, _ dataResponse: String) -> Void) {
+        
+        let url = urlAPI + "sendchecksdt"
+        let parameters: Parameters = [
+            "auth_code" : UserObj.currentUserProfile.auth_code!,
+            "iduser" : UserObj.currentUserProfile.id!,
+            "sdt" : stringSearch
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value as? [String:Any] {
+                    let feature = Mapper<CheckPhoneMapper>().map(JSONObject: data)
+                    
+                    _completion(.CODE_SUCCESS, (feature?.reason)!)
+                }
+            case .failure( _):
+                _completion(.CODE_FAILURE, "")
+            }
+        }
+    }
     
 }

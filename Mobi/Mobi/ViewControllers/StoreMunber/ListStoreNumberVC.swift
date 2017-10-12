@@ -11,9 +11,18 @@ import UIKit
 class ListStoreNumberVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var txtSearch: UITextField!
+    @IBOutlet weak var btType: UIButton!
+    @IBOutlet weak var btFisrtNumber: UIButton!
+    
     var arrSim : [SimObj]? = []
+    var arrTypeSim : [TypeSimObj]? = []
     var storeNumber : StoreNumber = .TraSau
     var pageIndex : Int! = 1
+    var firstNumber : String! = ""
+    var typeNumber : String! = ""
+    var firstNumberIndex : Int! = 0
+    var typeNumberIndex : Int! = 0
     
     static func initWithStoryboard() -> ListStoreNumberVC{
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListStoreNumberVC") as! ListStoreNumberVC
@@ -22,7 +31,7 @@ class ListStoreNumberVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loadTypeSim()
         // Do any additional setup after loading the view.
     }
 
@@ -38,11 +47,15 @@ class ListStoreNumberVC: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadTypeSim() {
+        ServiceManager.shared.typeSim(_completion: { (codeRespone, typeSim) in
+            self.arrTypeSim?.append(contentsOf: typeSim as! [TypeSimObj]);
+        })
+    }
 
     func loadData() {
         self.showLoadingIndicator(inView: self.view, title: "")
-        print("------------- \(self.pageIndex)")
-        ServiceManager.shared.searchSim(bySearch: "", byPage: self.pageIndex, byStore: self.storeNumber.getString(), byFirstNumber: "", byTypeNumber: "") { (codeRespone, simObj, nextLink) in
+        ServiceManager.shared.searchSim(bySearch: self.txtSearch.text, byPage: self.pageIndex, byStore: self.storeNumber.getString(), byFirstNumber: self.firstNumber, byTypeNumber: self.typeNumber) { (codeRespone, simObj, nextLink) in
             if self.arrSim == nil {
                 self.arrSim = simObj
             } else {
@@ -52,7 +65,87 @@ class ListStoreNumberVC: BaseViewController {
             self.dismissLoadingIndicator(inView: self.view)
         }
     }
+    
+    @IBAction func onTapBtType(_ sender: UIButton) {
+        let vc = UIViewController()
+        vc.preferredContentSize = CGSize(width: 250,height: 300)
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
+        pickerView.tag = 0
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        vc.view.addSubview(pickerView)
+        pickerView.selectRow(self.typeNumberIndex, inComponent: 0, animated: true)
+        let editRadiusAlert = UIAlertController(title: "Chọn dạng sim", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        editRadiusAlert.setValue(vc, forKey: "contentViewController")
+        editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+        editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(editRadiusAlert, animated: true)
+    }
+    
+    @IBAction func onTapBtFirstNumber(_ sender: UIButton) {
+        let vc = UIViewController()
+        vc.preferredContentSize = CGSize(width: 250,height: 300)
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))
+        pickerView.tag = 1
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.selectRow(self.firstNumberIndex, inComponent: 0, animated: true)
+        vc.view.addSubview(pickerView)
+        let editRadiusAlert = UIAlertController(title: "Chọn đầu số", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        editRadiusAlert.setValue(vc, forKey: "contentViewController")
+        editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+        editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(editRadiusAlert, animated: true)
+    }
+    
+    @IBAction func onTapBtSearch(_ sender: UIButton) {
+        self.pageIndex = 1
+        self.loadData()
+    }
 
+}
+
+extension ListStoreNumberVC : UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        // 0: TypeSim
+        if pickerView.tag == 0 {
+            return (self.arrTypeSim?.count)!
+        } else {
+            return arrayStringFirstNumber.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        // 0: TypeSim
+        if pickerView.tag == 0 {
+            let typeSimObj = self.arrTypeSim![row]
+            return typeSimObj.tenName!
+        } else {
+            return arrayStringFirstNumber[row]
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        // 0: TypeSim
+        if pickerView.tag == 0 {
+            let typeSimObj = self.arrTypeSim![row]
+            self.typeNumber = typeSimObj.tenKey
+            self.btType.setTitle(typeSimObj.tenName, for: .normal)
+            self.typeNumberIndex = row
+            
+        } else {
+            self.firstNumber = arrayStringFirstNumber[row]
+            self.btFisrtNumber.setTitle(arrayStringFirstNumber[row], for: .normal)
+            self.firstNumberIndex = row
+            
+        }
+    }
 }
 
 extension ListStoreNumberVC : UITableViewDelegate, UITableViewDataSource {
@@ -76,18 +169,4 @@ extension ListStoreNumberVC : UITableViewDelegate, UITableViewDataSource {
             self.loadData()
         }
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let categoryObj = self.arrCongNo![indexPath.row]
-//
-//        let webViewVC = WebViewVC.initWithStoryboard()
-//        webViewVC.strUrl = categoryObj.url
-//        webViewVC.setTitlePage(title: categoryObj.name!)
-//        if self.navigationController != nil {
-//            self.pushVC(webViewVC)
-//        } else {
-//            self.customNavigationController?.pushViewController(webViewVC, animated: true)
-//        }
-//
-//
-//    }
 }

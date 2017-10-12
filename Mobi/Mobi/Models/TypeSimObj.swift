@@ -19,7 +19,7 @@ class TypeSimObj: Mappable {
     
     func mapping(map: Map) {
         tenKey <- map["tenkey"]
-        tenKey <- map["tends"]
+        tenName <- map["tends"]
     }
     
 

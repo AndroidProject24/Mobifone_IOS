@@ -37,7 +37,7 @@ class SubHomeVC: BaseViewController {
 
 extension SubHomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return arrayStringSubMenuInSim[0].count
+        return arrayStringSubMenuInSim[0].count - (UserObj.currentUserProfile.isGuest ? 1 : 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,7 +52,15 @@ extension SubHomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let listNumberVC = StoreNumberVC.initWithStoryboard()
-        self.pushVC(listNumberVC)
+        if indexPath.row <= 3 {
+            let listNumberVC = StoreNumberVC.initWithStoryboard()
+            listNumberVC.indexPage = indexPath.row
+            self.pushVC(listNumberVC)
+        } else {
+            let checkNumberVC = CheckNumberVC.initWithStoryboard()
+            
+            self.pushVC(checkNumberVC)
+        }
+        
     }
 }
