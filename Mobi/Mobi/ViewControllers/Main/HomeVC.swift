@@ -87,7 +87,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             let tabViewController2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
             tabBarVC.navigationItem.title = NSLocalizedString("M_PROCEDURE", comment: "")
                 
-                tabViewController2.categoryType = .Procedure_HM_Tra_Sau
+            tabViewController2.categoryType = .Procedure_HM_Tra_Sau
             tabBarVC.viewControllers = [tabViewController1, tabViewController2]
             
             tabViewController1.tabBarItem = UITabBarItem(
@@ -110,8 +110,13 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         
         // Cong No
         if indexPath.row == 3 {
-            let congNoVC = CongNoVC.initWithStoryboard()
-            self.pushVC(congNoVC)
+            if UserObj.currentUserProfile.auth_code?.length == 0 {
+                UserObj.currentUserProfile = UserObj()
+                APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+            } else {
+                let congNoVC = CongNoVC.initWithStoryboard()
+                self.pushVC(congNoVC)
+            }
         }
         
         // Tai anh

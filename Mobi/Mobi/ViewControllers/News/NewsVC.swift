@@ -23,7 +23,9 @@ class NewsVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        self.loadData()
         // Do any additional setup after loading the view.
     }
 
@@ -33,9 +35,8 @@ class NewsVC: BaseViewController {
     }
     
    override func setupUI() {
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44.0
-        self.loadData()
+        super.setupUI();
+        
     }
     
     func loadData() {

@@ -45,7 +45,7 @@
 		807662EB1F7A74A10065656A /* CategoryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662EA1F7A74A10065656A /* CategoryObj.swift */; };
 		807662EE1F7B48040065656A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662ED1F7B48040065656A /* LoginVC.swift */; };
 		807662F01F7B48160065656A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662EF1F7B48160065656A /* RegisterVC.swift */; };
-		807662F21F7B48280065656A /* ForgetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662F11F7B48280065656A /* ForgetPassVC.swift */; };
+		807662F21F7B48280065656A /* ChangePassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662F11F7B48280065656A /* ChangePassVC.swift */; };
 		807662FB1F7C0AA50065656A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662FA1F7C0AA50065656A /* BaseViewController.swift */; };
 		807662FD1F7C0FF30065656A /* BaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807662FC1F7C0FF30065656A /* BaseExtensions.swift */; };
 		809902351F81F2A5009AC3D1 /* Uitl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809902341F81F2A5009AC3D1 /* Uitl.swift */; };
@@ -54,6 +54,7 @@
 		809E87A91F8A557A00DA4096 /* CongNoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E87A81F8A557A00DA4096 /* CongNoVC.swift */; };
 		809E87AC1F8A5BDC00DA4096 /* CongNoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E87AB1F8A5BDC00DA4096 /* CongNoTableCell.swift */; };
 		80DB38461F8E07B900DC94B2 /* SubHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DB38451F8E07B800DC94B2 /* SubHomeVC.swift */; };
+		80E20CA61F921BCE00096EC9 /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E20CA51F921BCE00096EC9 /* UpdateProfileVC.swift */; };
 		80EAAF271F849A2200173FA5 /* HUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EAAF261F849A2200173FA5 /* HUDManager.swift */; };
 		80F1872F1F8F77C30051D11A /* CheckNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F1872E1F8F77C30051D11A /* CheckNumberVC.swift */; };
 		80F187311F8F7E3D0051D11A /* CheckPhoneObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F187301F8F7E3D0051D11A /* CheckPhoneObj.swift */; };
@@ -121,7 +122,7 @@
 		807662EA1F7A74A10065656A /* CategoryObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryObj.swift; sourceTree = "<group>"; };
 		807662ED1F7B48040065656A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		807662EF1F7B48160065656A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		807662F11F7B48280065656A /* ForgetPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassVC.swift; sourceTree = "<group>"; };
+		807662F11F7B48280065656A /* ChangePassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassVC.swift; sourceTree = "<group>"; };
 		807662FA1F7C0AA50065656A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		807662FC1F7C0FF30065656A /* BaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseExtensions.swift; sourceTree = "<group>"; };
 		809902341F81F2A5009AC3D1 /* Uitl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uitl.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		809E87A81F8A557A00DA4096 /* CongNoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoVC.swift; sourceTree = "<group>"; };
 		809E87AB1F8A5BDC00DA4096 /* CongNoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoTableCell.swift; sourceTree = "<group>"; };
 		80DB38451F8E07B800DC94B2 /* SubHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubHomeVC.swift; sourceTree = "<group>"; };
+		80E20CA51F921BCE00096EC9 /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
 		80EAAF261F849A2200173FA5 /* HUDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDManager.swift; sourceTree = "<group>"; };
 		80F1872E1F8F77C30051D11A /* CheckNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNumberVC.swift; sourceTree = "<group>"; };
 		80F187301F8F7E3D0051D11A /* CheckPhoneObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPhoneObj.swift; sourceTree = "<group>"; };
@@ -410,7 +412,8 @@
 			children = (
 				807662ED1F7B48040065656A /* LoginVC.swift */,
 				807662EF1F7B48160065656A /* RegisterVC.swift */,
-				807662F11F7B48280065656A /* ForgetPassVC.swift */,
+				807662F11F7B48280065656A /* ChangePassVC.swift */,
+				80E20CA51F921BCE00096EC9 /* UpdateProfileVC.swift */,
 			);
 			path = Plash;
 			sourceTree = "<group>";
@@ -710,7 +713,7 @@
 				8066FA601F8DCC4300B9E2E0 /* ListStoreNumberVC.swift in Sources */,
 				804FDF671F860F59002923D8 /* RootVC.swift in Sources */,
 				807662E91F7A4B3E0065656A /* SimObj.swift in Sources */,
-				807662F21F7B48280065656A /* ForgetPassVC.swift in Sources */,
+				807662F21F7B48280065656A /* ChangePassVC.swift in Sources */,
 				809902351F81F2A5009AC3D1 /* Uitl.swift in Sources */,
 				8066FA551F8C72E100B9E2E0 /* CAPSPageMenu+Options.swift in Sources */,
 				809E87A91F8A557A00DA4096 /* CongNoVC.swift in Sources */,
@@ -747,6 +750,7 @@
 				804FDF741F8789BE002923D8 /* BannerTableViewCell.swift in Sources */,
 				804DADB71F8B894D007580B0 /* PromotionVC.swift in Sources */,
 				80657CC41F76363E005B244D /* ServiceManager.swift in Sources */,
+				80E20CA61F921BCE00096EC9 /* UpdateProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,7 +918,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WXDYG5HXX8;
+				DEVELOPMENT_TEAM = X8Q3UHU5AU;
 				INFOPLIST_FILE = "$(SRCROOT)/Mobi/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toanitc.Mobi;
@@ -930,7 +934,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WXDYG5HXX8;
+				DEVELOPMENT_TEAM = X8Q3UHU5AU;
 				INFOPLIST_FILE = "$(SRCROOT)/Mobi/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toanitc.Mobi;

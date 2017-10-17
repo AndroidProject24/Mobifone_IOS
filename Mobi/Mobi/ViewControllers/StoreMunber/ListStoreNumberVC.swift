@@ -49,7 +49,11 @@ class ListStoreNumberVC: BaseViewController {
     
     func loadTypeSim() {
         ServiceManager.shared.typeSim(_completion: { (codeRespone, typeSim) in
-            self.arrTypeSim?.append(contentsOf: typeSim as! [TypeSimObj]);
+            self.arrTypeSim?.append(contentsOf: typeSim as! [TypeSimObj])
+            let firstTypeSim = TypeSimObj()
+            firstTypeSim.tenKey = ""
+            firstTypeSim.tenName = "Dạng sim"
+            self.arrTypeSim?.insert(firstTypeSim, at: 0)
         })
     }
 
@@ -59,7 +63,9 @@ class ListStoreNumberVC: BaseViewController {
             if self.arrSim == nil {
                 self.arrSim = simObj
             } else {
-                self.arrSim?.append(contentsOf: simObj as! [SimObj]);
+                if simObj != nil {
+                    self.arrSim?.append(contentsOf: simObj as! [SimObj])
+                }
             }
             self.tableView.reloadData()
             self.dismissLoadingIndicator(inView: self.view)
@@ -100,6 +106,7 @@ class ListStoreNumberVC: BaseViewController {
     
     @IBAction func onTapBtSearch(_ sender: UIButton) {
         self.pageIndex = 1
+        self.arrSim = nil
         self.loadData()
     }
 
@@ -140,8 +147,13 @@ extension ListStoreNumberVC : UIPickerViewDelegate, UIPickerViewDataSource {
             self.typeNumberIndex = row
             
         } else {
-            self.firstNumber = arrayStringFirstNumber[row]
-            self.btFisrtNumber.setTitle(arrayStringFirstNumber[row], for: .normal)
+            if row == 0 {
+                self.firstNumber = ""
+                self.btFisrtNumber.setTitle(arrayStringFirstNumber[row], for: .normal)
+            } else {
+                self.firstNumber = arrayStringFirstNumber[row]
+                self.btFisrtNumber.setTitle(arrayStringFirstNumber[row], for: .normal)
+            }
             self.firstNumberIndex = row
             
         }

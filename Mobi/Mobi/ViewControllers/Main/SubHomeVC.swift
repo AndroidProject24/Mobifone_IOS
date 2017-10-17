@@ -37,7 +37,11 @@ class SubHomeVC: BaseViewController {
 
 extension SubHomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayStringSubMenuInSim[0].count - (UserObj.currentUserProfile.isGuest ? 1 : 0)
+        var i = 0
+        if UserObj.currentUserProfile.isGuest {
+           i = 1
+        }
+        return arrayStringSubMenuInSim[0].count - i
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

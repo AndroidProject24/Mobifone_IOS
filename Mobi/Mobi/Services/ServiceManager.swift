@@ -130,7 +130,7 @@ class ServiceManager {
     ///   - oldPassword: <#oldPassword description#>
     ///   - userObj: <#userObj description#>
     ///   - _completion: <#_completion description#>
-    func changePassword(byNewPassword newPassword: String?, byOldPassword oldPassword: String?, byUserObj userObj: UserObj, _completion:@escaping(_ code: CodeResponse, _ dataResponse: UserObj?) -> Void) {
+    func changePassword(byNewPassword newPassword: String?, byOldPassword oldPassword: String?, byUserObj userObj: UserObj, _completion:@escaping(_ code: CodeResponse, _ dataResponse: String?) -> Void) {
         
         let url = urlAPI + "edituser"
         let parameters: Parameters = [
@@ -146,8 +146,11 @@ class ServiceManager {
             case .success:
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<UserMapper>().map(JSONObject: data)
-                    
-                    _completion(.CODE_SUCCESS, feature!.detail)
+                    if feature?.error == 1 {
+                        _completion(.CODE_FAILURE, feature?.reason)
+                    } else {
+                        _completion(.CODE_SUCCESS, feature?.reason)
+                    }
                 }
             case .failure( _):
                 _completion(.CODE_FAILURE, nil)
@@ -218,7 +221,7 @@ class ServiceManager {
     ///   - firstNumber: <#firstNumber description#>
     ///   - typeNumber: <#typeNumber description#>
     ///   - _completion: <#_completion description#>
-    func searchSim(bySearch search: String?, byPage page: Int, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?, _ nextLink: String) -> Void) {
+    func searchSim(bySearch search: String?, byPage page: Int, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?, _ nextLink: String?) -> Void) {
         let url = urlAPI + "timsim"
         let parameters: Parameters = [
             "dau" : firstNumber!,
@@ -233,7 +236,7 @@ class ServiceManager {
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<SimMapper>().map(JSONObject: data)
                     
-                    _completion(.CODE_SUCCESS, feature!.detail, (feature?.nextLink)!)
+                    _completion(.CODE_SUCCESS, feature!.detail, feature?.nextLink)
                 }
             case .failure( _):
                 _completion(.CODE_FAILURE, nil, "")

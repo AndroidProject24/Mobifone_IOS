@@ -101,17 +101,51 @@ extension SlideMenuVC : UITableViewDelegate, UITableViewDataSource {
 
             // Congno
             if indexPath.row == 3 {
-                let congNoVC = CongNoVC.initWithStoryboard()
-                let home = HomeVC.initWithStoryboard()
-                navigationController.viewControllers = [home, congNoVC]
+                if UserObj.currentUserProfile.auth_code == nil || UserObj.currentUserProfile.auth_code?.length == 0 {
+                    UserObj.currentUserProfile = UserObj()
+                    APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+                } else {
+                    let congNoVC = CongNoVC.initWithStoryboard()
+                    let home = HomeVC.initWithStoryboard()
+                    navigationController.viewControllers = [home, congNoVC]
+                }
             }
-            
             
             // Thu tuc
             if indexPath.row == 4 {
-                let newsVC = NewsVC.initWithStoryboard()
+                
                 let home = HomeVC.initWithStoryboard()
-                navigationController.viewControllers = [home, newsVC]
+                
+                let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabbarVC") as! BaseTabBarController
+                let tabViewController1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+                let tabViewController2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+                tabBarVC.navigationItem.title = NSLocalizedString("M_PROCEDURE", comment: "")
+                
+                tabViewController2.categoryType = .Procedure_HM_Tra_Sau
+                tabBarVC.viewControllers = [tabViewController1, tabViewController2]
+                
+                tabViewController1.tabBarItem = UITabBarItem(
+                    title: NSLocalizedString("M_TRA_TRUOC", comment: ""),
+                    image: UIImage(named: "ic_home"),
+                    tag: 1)
+                tabViewController2.tabBarItem = UITabBarItem(
+                    title: NSLocalizedString("M_TRA_SAU", comment: ""),
+                    image:UIImage(named: "ic_business") ,
+                    tag:2)
+
+                navigationController.viewControllers = [home, tabBarVC]
+            }
+            
+            // Profile
+            if indexPath.row == 6 {
+                if UserObj.currentUserProfile.auth_code == nil || UserObj.currentUserProfile.auth_code?.length == 0 {
+                    UserObj.currentUserProfile = UserObj()
+                    APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+                } else {
+                    let updateProfileVC = UpdateProfileVC.initWithStoryboard()
+                    let home = HomeVC.initWithStoryboard()
+                    navigationController.viewControllers = [home, updateProfileVC]
+                }
             }
             
         } else {
