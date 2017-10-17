@@ -39,7 +39,7 @@ let arrayStringSubMenuInSim: [[String]]    = [["M_TRA_TRUOC", "M_TRA_SAU_DOANH_N
                                                    ["I_TRA_TRUOC", "I_TRA_SAU_DOANH_NGHIEP", "I_TRA_SAU", "I_CAM_KET_SO_DEP", "I_KIEM_TRA_TINH_TRANG"]
 ]
 
-let arrayStringFirstNumber: [String]    = ["090", "093", "083", "0120", "0121", "0122", "0126", "0128"]
+let arrayStringFirstNumber: [String]    = ["Đầu số", "090", "093", "083", "0120", "0121", "0122", "0126", "0128"]
 
 // MARK: - Height paging menu
 let kHeightMenu: CGFloat = 103

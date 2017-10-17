@@ -14,6 +14,7 @@ class RegisterVC: BaseViewController {
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var btRegister: UIButton!
     
     static func initWithStoryboard() -> RegisterVC{
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterVC") as! RegisterVC
@@ -26,6 +27,7 @@ class RegisterVC: BaseViewController {
         
         self.navBar?.isHidden = true
         self.setLeftMenuButtonImage()
+        self.btRegister.defaultButton()
         self.navigationController?.title = "Đăng Ký"
     }
     

@@ -11,14 +11,14 @@ import AlamofireImage
 
 class NewsTableCell: UITableViewCell {
 
-    @IBOutlet weak var viewMain: UIView!
+    @IBOutlet weak var viewMains: UIView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var imgTitle: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.viewMain.makeCornerAndShadowAndBorder(5, shadowRadius: 3, shadowOpacity: 0.5, borderWidth: 1)
+        self.viewMains.makeCornerAndShadowAndBorder(5, shadowRadius: 2, shadowOpacity: 0.2, borderWidth: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

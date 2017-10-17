@@ -130,7 +130,7 @@ class ServiceManager {
     ///   - oldPassword: <#oldPassword description#>
     ///   - userObj: <#userObj description#>
     ///   - _completion: <#_completion description#>
-    func changePassword(byNewPassword newPassword: String?, byOldPassword oldPassword: String?, byUserObj userObj: UserObj, _completion:@escaping(_ code: CodeResponse, _ dataResponse: UserObj?) -> Void) {
+    func changePassword(byNewPassword newPassword: String?, byOldPassword oldPassword: String?, byUserObj userObj: UserObj, _completion:@escaping(_ code: CodeResponse, _ dataResponse: String?) -> Void) {
         
         let url = urlAPI + "edituser"
         let parameters: Parameters = [
@@ -146,8 +146,11 @@ class ServiceManager {
             case .success:
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<UserMapper>().map(JSONObject: data)
-                    
-                    _completion(.CODE_SUCCESS, feature!.detail)
+                    if feature?.error == 1 {
+                        _completion(.CODE_FAILURE, feature?.reason)
+                    } else {
+                        _completion(.CODE_SUCCESS, feature?.reason)
+                    }
                 }
             case .failure( _):
                 _completion(.CODE_FAILURE, nil)
@@ -218,13 +221,14 @@ class ServiceManager {
     ///   - firstNumber: <#firstNumber description#>
     ///   - typeNumber: <#typeNumber description#>
     ///   - _completion: <#_completion description#>
-    func searchSim(bySearch search: String?, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?) -> Void) {
+    func searchSim(bySearch search: String?, byPage page: Int, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?, _ nextLink: String?) -> Void) {
         let url = urlAPI + "timsim"
         let parameters: Parameters = [
             "dau" : firstNumber!,
             "kho" : store!,
             "dang" : typeNumber!,
-            "search" : search!
+            "search" : search!,
+            "page" : page
         ]
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
             switch response.result {
@@ -232,10 +236,10 @@ class ServiceManager {
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<SimMapper>().map(JSONObject: data)
                     
-                    _completion(.CODE_SUCCESS, feature!.detail)
+                    _completion(.CODE_SUCCESS, feature!.detail, feature?.nextLink)
                 }
             case .failure( _):
-                _completion(.CODE_FAILURE, nil)
+                _completion(.CODE_FAILURE, nil, "")
             }
         }
     }
@@ -251,7 +255,7 @@ class ServiceManager {
     
     
     func category(byType type:CategoryType, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [CategoryObj]?) -> Void) {
-        let url = urlAPI + "theloai/\(type)"
+        let url = urlAPI + "theloai/\(type.rawValue)"
         
         Alamofire.request(url, method: .get).responseJSON { response in
             switch response.result {
@@ -291,5 +295,28 @@ class ServiceManager {
         }
     }
     
+//    MARK: - CHECK PHONE NUMBER
+    func checkNumberPhone(byString stringSearch: String, _completion:@escaping(_ code: CodeResponse, _ dataResponse: String) -> Void) {
+        
+        let url = urlAPI + "sendchecksdt"
+        let parameters: Parameters = [
+            "auth_code" : UserObj.currentUserProfile.auth_code!,
+            "iduser" : UserObj.currentUserProfile.id!,
+            "sdt" : stringSearch
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value as? [String:Any] {
+                    let feature = Mapper<CheckPhoneMapper>().map(JSONObject: data)
+                    
+                    _completion(.CODE_SUCCESS, (feature?.reason)!)
+                }
+            case .failure( _):
+                _completion(.CODE_FAILURE, "")
+            }
+        }
+    }
     
 }

@@ -29,10 +29,15 @@ class SimObj: Mappable {
 
 class SimMapper: BaseObj {
     var detail: [SimObj]?
+    var totalrows: String?
+    var nextLink: String?
+    
     
     override func mapping(map: Map) {
         detail <- map["data"]
         idk <- map["idk"]
+        totalrows <- map["totalrows"]
+        nextLink <- map["page.nextLink"]
 //        error <- map["error"]
         reason <- map["reason"]
     }

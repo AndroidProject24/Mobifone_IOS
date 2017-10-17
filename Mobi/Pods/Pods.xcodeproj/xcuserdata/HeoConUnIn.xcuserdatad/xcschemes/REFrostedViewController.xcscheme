@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2A56CCFEA4D8B9D1ADFD5568B76BE726'
+               BlueprintIdentifier = '5C6A0DAD9A678142E8A0F0B12377D1E8'
                BlueprintName = 'REFrostedViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'REFrostedViewController.framework'>

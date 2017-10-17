@@ -70,6 +70,6 @@ class HUDManager: NSObject {
     }
     
     static func dismissHUD(_ view:UIView){
-        MBProgressHUD.hide(for: view, animated: true)
+        MBProgressHUD.hideAllHUDs(for: view, animated: true)
     }
 }

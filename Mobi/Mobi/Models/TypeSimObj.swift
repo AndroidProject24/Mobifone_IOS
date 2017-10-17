@@ -8,10 +8,14 @@
 
 import ObjectMapper
 
-class TypeSimObj: Mappable {
+class TypeSimObj: NSObject, Mappable {
     
     var tenKey: String?
     var tenName: String?
+    
+    override init() {
+        super.init()
+    }
     
     required init?(map: Map) {
         
@@ -19,7 +23,7 @@ class TypeSimObj: Mappable {
     
     func mapping(map: Map) {
         tenKey <- map["tenkey"]
-        tenKey <- map["tends"]
+        tenName <- map["tends"]
     }
     
 
