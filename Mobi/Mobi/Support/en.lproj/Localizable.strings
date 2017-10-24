@@ -23,3 +23,7 @@
 "M_TRA_SAU" = "Trả Sau";
 "M_CAM_KET_SO_DEP" = "Cam Kết Số Đẹp";
 "M_KIEM_TRA_TINH_TRANG" = "Kiểm Tra Tình Trạng";
+"M_UPLOAD" = "Tải ảnh";
+"M_COMPANY" = "CÔNG TY";
+"M_MYSELF" = "CÁ NHÂN";
+"iToast_PopupVC_Input_all" = "Nhập đầy đủ thông tin";

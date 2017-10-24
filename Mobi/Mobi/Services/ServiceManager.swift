@@ -319,4 +319,81 @@ class ServiceManager {
         }
     }
     
+    //    MARK: - Upload image
+    func uploadImge(bytype: UploadImageType, simObj: SimObj, cateObj: CategoryObj, listImage: [PostingImage], _completion:@escaping(_ code: CodeResponse, _ dataResponse: String) -> Void) {
+        
+        var url = ""
+        let parameters: Parameters = [
+//            "auth_code" : "UserObj.currentUserProfile.auth_code!",
+//            "iduser" : "UserObj.currentUserProfile.id!",
+            "auth_code" : "78c536d0bb4891dd877f059707f1d557",
+            "iduser" : "2",
+            "sdt" : simObj.name!,
+            "idloai" : cateObj.idloai!
+        ]
+        
+        if bytype == UploadImageType.ImageShopCard || bytype == UploadImageType.ImageTraTruoc {
+            url = urlAPI + "upanh/" + "tratruoc"
+            
+        } else if bytype == UploadImageType.ImageTraSauCongTy {
+            url = urlAPI + "upanh/" + "trasaudoanhnghiep"
+            
+        } else if bytype == UploadImageType.ImageTraSauCaNhan {
+            url = urlAPI + "upanh/" + "trasaucanhan"
+            
+        }
+
+        let headers: HTTPHeaders = [
+            /* "Authorization": "your_access_token",  in case you need authorization header */
+            "Content-type": "multipart/form-data"
+        ]
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
+            }
+            
+            for image in listImage {
+                if let data = image.data {
+                    multipartFormData.append(data, withName: image.imageKey!, mimeType: "image/jpeg")
+                }
+            }
+        }, to: url, headers: headers)
+        { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    //Print progress
+                })
+                
+                upload.responseJSON { response in
+                    print(response.result)
+                    _completion(.CODE_SUCCESS, "")
+                }
+                
+            case .failure( _):
+                _completion(.CODE_FAILURE, "")
+                break
+                //print encodingError.description
+            }
+        }
+        
+        
+//        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
+//            switch response.result {
+//            case .success:
+//                if let data = response.result.value as? [String:Any] {
+//                    let feature = Mapper<CheckPhoneMapper>().map(JSONObject: data)
+//
+//                    _completion(.CODE_SUCCESS, (feature?.reason)!)
+//                }
+//            case .failure( _):
+//                _completion(.CODE_FAILURE, "")
+//            }
+//        }
+    }
+    
 }

@@ -11,7 +11,10 @@ import WebKit
 
 class WebViewVC: BaseViewController {
 
-    @IBOutlet weak var webView: WKWebView!
+    var wkWebView : WKWebView?
+    var uiWebView : UIWebView?
+    
+   
     var strUrl : String?
     
     static func initWithStoryboard() -> WebViewVC{
@@ -26,8 +29,23 @@ class WebViewVC: BaseViewController {
         
         // loading URL :
         let url = URL(string: strUrl!);
-        webView.navigationDelegate = self
-        webView.load(URLRequest(url: url!));
+        
+        if (NSClassFromString("WKWebView") != nil) {
+            let config = WKWebViewConfiguration()
+            
+            wkWebView = WKWebView(frame: self.view.frame, configuration: config)
+            wkWebView?.navigationDelegate = self
+            wkWebView?.load(URLRequest(url: url!))
+            self.view.addSubview(wkWebView!)
+        }
+        else {
+            uiWebView = UIWebView(frame: self.view.frame)
+//            uiWebView?.navigationDelegate = self
+            uiWebView?.loadRequest(URLRequest(url: url!))
+            self.view.addSubview(uiWebView!)
+        }
+        
+        
     }
     
     override func setupUI() {

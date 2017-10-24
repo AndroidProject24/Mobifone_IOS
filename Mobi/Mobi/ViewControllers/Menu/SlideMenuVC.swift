@@ -137,6 +137,13 @@ extension SlideMenuVC : UITableViewDelegate, UITableViewDataSource {
             }
             
             // Profile
+            if indexPath.row == 5 {
+                let uploadImageVC = MainUploadImageVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home, uploadImageVC]
+            }
+            
+            // Profile
             if indexPath.row == 6 {
                 if UserObj.currentUserProfile.auth_code == nil || UserObj.currentUserProfile.auth_code?.length == 0 {
                     UserObj.currentUserProfile = UserObj()

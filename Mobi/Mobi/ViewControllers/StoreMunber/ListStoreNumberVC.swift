@@ -15,6 +15,8 @@ class ListStoreNumberVC: BaseViewController {
     @IBOutlet weak var btType: UIButton!
     @IBOutlet weak var btFisrtNumber: UIButton!
     
+    var customNavigationController: UINavigationController?
+    
     var arrSim : [SimObj]? = []
     var arrTypeSim : [TypeSimObj]? = []
     var storeNumber : StoreNumber = .TraSau
@@ -172,6 +174,7 @@ extension ListStoreNumberVC : UITableViewDelegate, UITableViewDataSource {
         let simObj = self.arrSim![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ListStoreNumberTableCell.self), for: indexPath) as! ListStoreNumberTableCell
         cell.config(simObj: simObj)
+        cell.delegate = self
         return cell
     }
     
@@ -179,6 +182,20 @@ extension ListStoreNumberVC : UITableViewDelegate, UITableViewDataSource {
         if (indexPath.row == (self.arrSim?.count)! - 1) {
             self.pageIndex = self.pageIndex! + 1
             self.loadData()
+        }
+    }
+}
+
+extension ListStoreNumberVC : ListStoreNumberTableCellDelegate {
+    func onTapButtonAddShopping(_ cell: ListStoreNumberTableCell) {
+        
+        if self.storeNumber == .TraSau || self.storeNumber == .CamKet || self.storeNumber == .TraTruoc {
+            let vc = PopupVC.initWithStoryboard()
+            vc.customNavigationController = self.customNavigationController
+            vc.storeNumber = self.storeNumber
+            vc.simObj = cell._simObj
+            
+            self.presentVC(vc)
         }
     }
 }
