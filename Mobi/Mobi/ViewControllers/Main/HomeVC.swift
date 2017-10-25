@@ -108,20 +108,28 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             self.pushVC(promotionVC)
         }
         
-        // Cong No
+        // Cong No For User Is true
+        // Thanh toan
         if indexPath.row == 3 {
-            if UserObj.currentUserProfile.auth_code?.length == 0 {
-                UserObj.currentUserProfile = UserObj()
-                APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+            if UserObj.currentUserProfile.isGuest {
+                let webViewVC = WebViewVC.initWithStoryboard()
+                webViewVC.strUrl = "http://n3t.top/test/fire/test"
+                self.pushVC(webViewVC)
             } else {
-                let congNoVC = CongNoVC.initWithStoryboard()
-                self.pushVC(congNoVC)
+                if UserObj.currentUserProfile.auth_code == nil || UserObj.currentUserProfile.auth_code?.length == 0 {
+                    UserObj.currentUserProfile = UserObj()
+                    APPDELEGATE.resetToRootViewLogin(onComplete: nil)
+                } else {
+                    let congNoVC = CongNoVC.initWithStoryboard()
+                    self.pushVC(congNoVC)
+                }
             }
         }
         
         // Tai anh
         if indexPath.row == 4 {
-            
+            let uploadImageVC = MainUploadImageVC.initWithStoryboard()
+            self.pushVC(uploadImageVC)
         }
         
         // vas
@@ -133,7 +141,6 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if indexPath.row == 6 {
             let webViewVC = WebViewVC.initWithStoryboard()
             webViewVC.strUrl = "http://n3t.top/test/fire/test"
-//            webViewVC.setTitlePage(title: NSLocalizedString("M_PAY_THE_BILL", comment: ""))
             self.pushVC(webViewVC)
         }
     }

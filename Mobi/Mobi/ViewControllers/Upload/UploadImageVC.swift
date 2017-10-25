@@ -41,6 +41,7 @@ class UploadImageVC: BaseViewController {
     override func viewDidLoad() {
 //        self.typeVC = UploadImageType.ImageShopCard
         super.viewDidLoad()
+        self.isShowBanner = false
         
         // Do any additional setup after loading the view.
         self.navigationItem.title = NSLocalizedString("M_UPLOAD", comment: "")

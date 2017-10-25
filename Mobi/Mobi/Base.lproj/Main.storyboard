@@ -1946,7 +1946,7 @@
     <resources>
         <image name="ic_Send" width="80" height="80"/>
         <image name="ic_down" width="16" height="16"/>
-        <image name="ic_kiemtra" width="177" height="183"/>
+        <image name="ic_kiemtra" width="256" height="256"/>
         <image name="ic_profile" width="315" height="316"/>
         <image name="ic_shopping" width="32" height="32"/>
         <image name="left_arrow" width="24" height="24"/>

@@ -33,6 +33,7 @@ class ListStoreNumberVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isShowBanner = false
         self.loadTypeSim()
         // Do any additional setup after loading the view.
     }

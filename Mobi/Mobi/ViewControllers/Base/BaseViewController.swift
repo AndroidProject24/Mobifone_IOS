@@ -8,9 +8,7 @@
 
 import Foundation
 import UIKit
-//import MBProgressHUD
-//import Toast_Swift
-//import DropDown
+import GoogleMobileAds
 
 class BaseViewController: UIViewController {
 
@@ -18,6 +16,9 @@ class BaseViewController: UIViewController {
     var rightButton:UIButton!
     var titleLabel: UILabel!
     var notiLabel: UILabel!
+    
+    var isShowBanner: Bool! = true
+    var ggBannerView: GADBannerView!
     
 //    fileprivate var hud: MBProgressHUD = MBProgressHUD()
     
@@ -65,7 +66,11 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         setupUI()
-//        self.dropDown = DropDown()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addBannerAD(isShowBanner)
     }
     
     /**
@@ -183,4 +188,76 @@ class BaseViewController: UIViewController {
             return nil
         }
     }
+    
+    func addBannerAD(_ isShow: Bool) {
+        guard isShow else {
+            return
+        }
+        
+        self.ggBannerView = GADBannerView.init(adSize: kGADAdSizeBanner)
+        self.ggBannerView.adSize = kGADAdSizeBanner
+        
+        
+        let request = GADRequest()
+        // Sample device ID
+//                request.testDevices = [kGADSimulatorID];
+
+        //        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+        ggBannerView.adUnitID = "ca-app-pub-4837358488793511/3750776743"
+        ggBannerView.rootViewController = self
+        ggBannerView.load(request)
+        self.ggBannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self.ggBannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: self.ggBannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: self.ggBannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
 }
+
+//extension LoginVC : GADBannerViewDelegate {
+//    /// Tells the delegate an ad request loaded an ad.
+//    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+//        print("adViewDidReceiveAd")
+//    }
+//
+//    /// Tells the delegate an ad request failed.
+//    func adView(_ bannerView: GADBannerView,
+//                didFailToReceiveAdWithError error: GADRequestError) {
+//        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+//    }
+//
+//    /// Tells the delegate that a full screen view will be presented in response
+//    /// to the user clicking on an ad.
+//    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+//        print("adViewWillPresentScreen")
+//    }
+//
+//    /// Tells the delegate that the full screen view will be dismissed.
+//    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+//        print("adViewWillDismissScreen")
+//    }
+//
+//    /// Tells the delegate that the full screen view has been dismissed.
+//    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+//        print("adViewDidDismissScreen")
+//    }
+//
+//    /// Tells the delegate that a user click will open another app (such as
+//    /// the App Store), backgrounding the current app.
+//    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+//        print("adViewWillLeaveApplication")
+//    }
+//}
