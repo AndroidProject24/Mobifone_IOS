@@ -20,6 +20,7 @@
 		804FDF741F8789BE002923D8 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FDF731F8789BE002923D8 /* BannerTableViewCell.swift */; };
 		804FDF761F8789DF002923D8 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FDF751F8789DF002923D8 /* HeaderTableViewCell.swift */; };
 		804FDF7E1F88ECD1002923D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 804FDF801F88ECD1002923D8 /* Localizable.strings */; };
+		805BBC6B1F9BB16700D17F85 /* MainUploadImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BBC6A1F9BB16700D17F85 /* MainUploadImageVC.swift */; };
 		80657C931F762543005B244D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80657C921F762543005B244D /* AppDelegate.swift */; };
 		80657C981F762543005B244D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80657C961F762543005B244D /* Main.storyboard */; };
 		80657C9A1F762543005B244D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80657C991F762543005B244D /* Assets.xcassets */; };
@@ -53,9 +54,11 @@
 		809E87A61F8A4DEE00DA4096 /* CongNoObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E87A51F8A4DEE00DA4096 /* CongNoObj.swift */; };
 		809E87A91F8A557A00DA4096 /* CongNoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E87A81F8A557A00DA4096 /* CongNoVC.swift */; };
 		809E87AC1F8A5BDC00DA4096 /* CongNoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E87AB1F8A5BDC00DA4096 /* CongNoTableCell.swift */; };
+		80D6C5CD1F9609C000C61EE4 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6C5CC1F9609C000C61EE4 /* PopupVC.swift */; };
 		80DB38461F8E07B900DC94B2 /* SubHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DB38451F8E07B800DC94B2 /* SubHomeVC.swift */; };
 		80E20CA61F921BCE00096EC9 /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E20CA51F921BCE00096EC9 /* UpdateProfileVC.swift */; };
 		80EAAF271F849A2200173FA5 /* HUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EAAF261F849A2200173FA5 /* HUDManager.swift */; };
+		80EFEE341F974C5A0021CDB7 /* UploadImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFEE331F974C5A0021CDB7 /* UploadImageVC.swift */; };
 		80F1872F1F8F77C30051D11A /* CheckNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F1872E1F8F77C30051D11A /* CheckNumberVC.swift */; };
 		80F187311F8F7E3D0051D11A /* CheckPhoneObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F187301F8F7E3D0051D11A /* CheckPhoneObj.swift */; };
 		80FFE5F31F8A6B0500AA8A3B /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F21F8A6B0500AA8A3B /* WebViewVC.swift */; };
@@ -93,6 +96,7 @@
 		804FDF791F88EB95002923D8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		804FDF7F1F88ECD1002923D8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		804FDF811F88ECD4002923D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		805BBC6A1F9BB16700D17F85 /* MainUploadImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUploadImageVC.swift; sourceTree = "<group>"; };
 		80657C8F1F762543005B244D /* Mobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80657C921F762543005B244D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80657C971F762543005B244D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,9 +134,11 @@
 		809E87A51F8A4DEE00DA4096 /* CongNoObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoObj.swift; sourceTree = "<group>"; };
 		809E87A81F8A557A00DA4096 /* CongNoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoVC.swift; sourceTree = "<group>"; };
 		809E87AB1F8A5BDC00DA4096 /* CongNoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoTableCell.swift; sourceTree = "<group>"; };
+		80D6C5CC1F9609C000C61EE4 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		80DB38451F8E07B800DC94B2 /* SubHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubHomeVC.swift; sourceTree = "<group>"; };
 		80E20CA51F921BCE00096EC9 /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
 		80EAAF261F849A2200173FA5 /* HUDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDManager.swift; sourceTree = "<group>"; };
+		80EFEE331F974C5A0021CDB7 /* UploadImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageVC.swift; sourceTree = "<group>"; };
 		80F1872E1F8F77C30051D11A /* CheckNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNumberVC.swift; sourceTree = "<group>"; };
 		80F187301F8F7E3D0051D11A /* CheckPhoneObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPhoneObj.swift; sourceTree = "<group>"; };
 		80FFE5F21F8A6B0500AA8A3B /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
@@ -281,6 +287,7 @@
 		80657CB21F76363D005B244D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				80EFEE321F974C3C0021CDB7 /* Upload */,
 				8066FA5C1F8DBB9200B9E2E0 /* StoreMunber */,
 				804DADB51F8B87D1007580B0 /* Promotion */,
 				80FFE5F41F8A895100AA8A3B /* News */,
@@ -400,6 +407,7 @@
 		8066FA5C1F8DBB9200B9E2E0 /* StoreMunber */ = {
 			isa = PBXGroup;
 			children = (
+				80D6C5CA1F96097900C61EE4 /* popup */,
 				8066FA5D1F8DC9F100B9E2E0 /* StoreNumberVC.swift */,
 				8066FA5F1F8DCC4300B9E2E0 /* ListStoreNumberVC.swift */,
 				80F1872E1F8F77C30051D11A /* CheckNumberVC.swift */,
@@ -472,6 +480,23 @@
 				809E87A81F8A557A00DA4096 /* CongNoVC.swift */,
 			);
 			path = CongNo;
+			sourceTree = "<group>";
+		};
+		80D6C5CA1F96097900C61EE4 /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				80D6C5CC1F9609C000C61EE4 /* PopupVC.swift */,
+			);
+			path = popup;
+			sourceTree = "<group>";
+		};
+		80EFEE321F974C3C0021CDB7 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				805BBC6A1F9BB16700D17F85 /* MainUploadImageVC.swift */,
+				80EFEE331F974C5A0021CDB7 /* UploadImageVC.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		80FFE5F11F8A68A000AA8A3B /* Webview */ = {
@@ -611,9 +636,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mobi/Pods-Mobi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/REFrostedViewController/REFrostedViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftOverlays/SwiftOverlays.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/REFrostedViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverlays.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -626,13 +674,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobi-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91C231A58E695A3BD4B932F9 /* [CP] Embed Pods Frameworks */ = {
@@ -671,13 +722,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobiTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE241A3F506BCF809BB31518 /* [CP] Copy Pods Resources */ = {
@@ -735,8 +789,10 @@
 				807662E71F7A14E10065656A /* TypeSimObj.swift in Sources */,
 				807662EE1F7B48040065656A /* LoginVC.swift in Sources */,
 				809E87AC1F8A5BDC00DA4096 /* CongNoTableCell.swift in Sources */,
+				80D6C5CD1F9609C000C61EE4 /* PopupVC.swift in Sources */,
 				8066FA5A1F8C72E100B9E2E0 /* CAPSPageMenuConfiguration.swift in Sources */,
 				807662EB1F7A74A10065656A /* CategoryObj.swift in Sources */,
+				80EFEE341F974C5A0021CDB7 /* UploadImageVC.swift in Sources */,
 				80F1872F1F8F77C30051D11A /* CheckNumberVC.swift in Sources */,
 				8066FA561F8C72E100B9E2E0 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				8066FA5B1F8C72E100B9E2E0 /* MenuItemView.swift in Sources */,
@@ -748,6 +804,7 @@
 				80FFE5FA1F8A8F7C00AA8A3B /* NewsTableCell.swift in Sources */,
 				8066FA571F8C72E100B9E2E0 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				804FDF741F8789BE002923D8 /* BannerTableViewCell.swift in Sources */,
+				805BBC6B1F9BB16700D17F85 /* MainUploadImageVC.swift in Sources */,
 				804DADB71F8B894D007580B0 /* PromotionVC.swift in Sources */,
 				80657CC41F76363E005B244D /* ServiceManager.swift in Sources */,
 				80E20CA61F921BCE00096EC9 /* UpdateProfileVC.swift in Sources */,
@@ -920,8 +977,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8Q3UHU5AU;
 				INFOPLIST_FILE = "$(SRCROOT)/Mobi/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toanitc.Mobi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoangdo.mobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -936,8 +994,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X8Q3UHU5AU;
 				INFOPLIST_FILE = "$(SRCROOT)/Mobi/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toanitc.Mobi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoangdo.mobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

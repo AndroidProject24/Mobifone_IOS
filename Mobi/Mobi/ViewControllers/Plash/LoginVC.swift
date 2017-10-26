@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class LoginVC: BaseViewController {
     
     @IBOutlet weak var txtUserName: UITextField!
@@ -28,7 +27,6 @@ class LoginVC: BaseViewController {
         
         self.btLogin.defaultButton()
         self.btLoginForGuest.defaultButton()
-        
         
     
 //        emailField.detail = "Error, incorrect email"
@@ -86,3 +84,6 @@ class LoginVC: BaseViewController {
     }
     
 }
+
+
+

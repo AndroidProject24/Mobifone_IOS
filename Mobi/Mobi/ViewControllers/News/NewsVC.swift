@@ -23,6 +23,7 @@ class NewsVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isShowBanner = false
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         self.loadData()

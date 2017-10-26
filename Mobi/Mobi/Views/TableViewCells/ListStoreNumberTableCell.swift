@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol ListStoreNumberTableCellDelegate {
+    func onTapButtonAddShopping(_ cell: ListStoreNumberTableCell)
+}
+
 class ListStoreNumberTableCell: UITableViewCell {
 
     @IBOutlet weak var viewMains: UIView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
     @IBOutlet weak var lbGoiCuoc: UILabel!
+    
+    var delegate: ListStoreNumberTableCellDelegate?
+    var _simObj: SimObj!
     
     
     override func awakeFromNib() {
@@ -29,9 +36,13 @@ class ListStoreNumberTableCell: UITableViewCell {
     }
     
     func config(simObj: SimObj) {
+        self._simObj = simObj
         self.lbTitle.text = simObj.name
         self.lbPrice.text = "\(String(describing: simObj.price!)) VNĐ"
         self.lbGoiCuoc.text = simObj.originPrice
     }
 
+    @IBAction func onTapbtAddShop(_ sender: UIButton) {
+        delegate?.onTapButtonAddShopping(self)
+    }
 }

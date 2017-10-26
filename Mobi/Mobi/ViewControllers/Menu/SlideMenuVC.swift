@@ -13,7 +13,7 @@ class SlideMenuVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.isShowBanner = false
         // Do any additional setup after loading the view.
     }
     
@@ -134,6 +134,13 @@ extension SlideMenuVC : UITableViewDelegate, UITableViewDataSource {
                     tag:2)
 
                 navigationController.viewControllers = [home, tabBarVC]
+            }
+            
+            // Upload
+            if indexPath.row == 5 {
+                let uploadImageVC = MainUploadImageVC.initWithStoryboard()
+                let home = HomeVC.initWithStoryboard()
+                navigationController.viewControllers = [home, uploadImageVC]
             }
             
             // Profile

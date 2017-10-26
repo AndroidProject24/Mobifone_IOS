@@ -14,6 +14,7 @@ class CategoryObj: Mappable {
     var url: String?
     var image: String?
     var name: String?
+    var idloai: String?
     
     required init?(map: Map) {
         
@@ -23,6 +24,7 @@ class CategoryObj: Mappable {
         name <- map["tenloai"]
         image <- map["image"]
         url <- map["url"]
+        idloai <- map["idloai"]
     }
 }
 
