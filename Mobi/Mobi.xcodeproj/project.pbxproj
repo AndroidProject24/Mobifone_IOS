@@ -65,6 +65,8 @@
 		80FFE5F61F8A899C00AA8A3B /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F51F8A899C00AA8A3B /* NewsVC.swift */; };
 		80FFE5F81F8A8C7D00AA8A3B /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F71F8A8C7D00AA8A3B /* BaseTabBarController.swift */; };
 		80FFE5FA1F8A8F7C00AA8A3B /* NewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F91F8A8F7C00AA8A3B /* NewsTableCell.swift */; };
+		A5FA05471FA8ED6700347F5E /* VasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA05461FA8ED6700347F5E /* VasVC.swift */; };
+		A5FA05491FA8F39700347F5E /* VasCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA05481FA8F39700347F5E /* VasCheckVC.swift */; };
 		ED43F6AAA09D4A43DD34311A /* Pods_MobiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,8 @@
 		80FFE5F91F8A8F7C00AA8A3B /* NewsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableCell.swift; sourceTree = "<group>"; };
 		8EE78621C26D00D7DDEFE3BC /* Pods-Mobi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.release.xcconfig"; sourceTree = "<group>"; };
 		A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5FA05461FA8ED6700347F5E /* VasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasVC.swift; sourceTree = "<group>"; };
+		A5FA05481FA8F39700347F5E /* VasCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasCheckVC.swift; sourceTree = "<group>"; };
 		C6455191756F287269F6FF54 /* Pods-MobiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiTests/Pods-MobiTests.release.xcconfig"; sourceTree = "<group>"; };
 		E11F9D41722D770589A81BAB /* Pods-Mobi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +291,7 @@
 		80657CB21F76363D005B244D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5FA05451FA8ED4900347F5E /* Vas */,
 				80EFEE321F974C3C0021CDB7 /* Upload */,
 				8066FA5C1F8DBB9200B9E2E0 /* StoreMunber */,
 				804DADB51F8B87D1007580B0 /* Promotion */,
@@ -513,6 +518,15 @@
 				80FFE5F51F8A899C00AA8A3B /* NewsVC.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		A5FA05451FA8ED4900347F5E /* Vas */ = {
+			isa = PBXGroup;
+			children = (
+				A5FA05461FA8ED6700347F5E /* VasVC.swift */,
+				A5FA05481FA8F39700347F5E /* VasCheckVC.swift */,
+			);
+			path = Vas;
 			sourceTree = "<group>";
 		};
 		FC0B99204E1227E6E82B90DC /* Frameworks */ = {
@@ -770,6 +784,7 @@
 				807662F21F7B48280065656A /* ChangePassVC.swift in Sources */,
 				809902351F81F2A5009AC3D1 /* Uitl.swift in Sources */,
 				8066FA551F8C72E100B9E2E0 /* CAPSPageMenu+Options.swift in Sources */,
+				A5FA05471FA8ED6700347F5E /* VasVC.swift in Sources */,
 				809E87A91F8A557A00DA4096 /* CongNoVC.swift in Sources */,
 				8066FA5E1F8DC9F100B9E2E0 /* StoreNumberVC.swift in Sources */,
 				807662E51F7952520065656A /* BaseObj.swift in Sources */,
@@ -803,6 +818,7 @@
 				804FDF721F8789AC002923D8 /* MenuTableCell.swift in Sources */,
 				80FFE5FA1F8A8F7C00AA8A3B /* NewsTableCell.swift in Sources */,
 				8066FA571F8C72E100B9E2E0 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
+				A5FA05491FA8F39700347F5E /* VasCheckVC.swift in Sources */,
 				804FDF741F8789BE002923D8 /* BannerTableViewCell.swift in Sources */,
 				805BBC6B1F9BB16700D17F85 /* MainUploadImageVC.swift in Sources */,
 				804DADB71F8B894D007580B0 /* PromotionVC.swift in Sources */,
