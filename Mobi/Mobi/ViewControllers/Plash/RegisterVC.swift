@@ -40,6 +40,8 @@ class RegisterVC: BaseViewController {
     // MARK: - Action
     
     @IBAction func onTapBtRegister(_ sender: UIButton) {
+        self.showBannerVideo(0.1)
+        
         self.showLoadingIndicator(inView: self.view, title: "")
         ServiceManager.shared.registerUser(byPassword: self.txtPassword!.text, byUsername: self.txtUserName!.text, byEmail: self.txtEmail!.text, _completion: { (codeResponse, userObj) in
             let loginViewControler = LoginVC.initWithStoryboard()
@@ -54,4 +56,26 @@ class RegisterVC: BaseViewController {
     @IBAction func onTapBtBack(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    @IBAction func onTapDismissKey(_ sender: UITapGestureRecognizer) {
+        self.dismissKeyboard()
+    }
 }
+
+extension RegisterVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            self.txtUserName.becomeFirstResponder()
+        
+        } else if textField.tag == 1 {
+            self.txtPassword.becomeFirstResponder()
+        
+        } else if textField.tag == 2 {
+            self.btRegister.sendActions(for: UIControlEvents.touchUpInside)
+        }
+        return true
+    }
+    
+}
+

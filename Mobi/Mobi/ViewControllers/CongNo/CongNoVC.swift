@@ -22,6 +22,7 @@ class CongNoVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.showBannerVideo(0.1)
     }
     
     override func setupUI() {

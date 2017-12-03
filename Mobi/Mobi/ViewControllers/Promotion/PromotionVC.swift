@@ -20,7 +20,7 @@ class PromotionVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.showBannerVideo(0.1)
         // Do any additional setup after loading the view.
         
         

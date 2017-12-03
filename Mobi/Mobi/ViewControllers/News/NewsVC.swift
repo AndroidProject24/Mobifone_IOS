@@ -37,7 +37,6 @@ class NewsVC: BaseViewController {
     
    override func setupUI() {
         super.setupUI();
-        pushVC(<#T##vc: UIViewController##UIViewController#>)
     }
     
     func loadData() {

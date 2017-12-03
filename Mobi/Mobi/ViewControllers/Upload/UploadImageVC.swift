@@ -28,6 +28,7 @@ class UploadImageVC: BaseViewController {
     var allowResizing: Bool = true
     var allowMoving: Bool = true
     var minimumSize: CGSize = CGSize(width: 60, height: 60)
+    var customNavigationController: UINavigationController?
     
     var croppingParameters: CroppingParameters {
         return CroppingParameters(isEnabled: croppingEnabled, allowResizing: allowResizing, allowMoving: allowMoving, minimumSize: minimumSize)
@@ -91,7 +92,7 @@ class UploadImageVC: BaseViewController {
                     let chooseImage = self.arrViewImage[item.tag]
                     let imageType = ImageKeyTraTruoc(rawValue: item.tag)
                     
-                    postImage.append(PostingImage(imageKey: imageType?.getNameItem() , pathImage: nil, image: chooseImage.image, imageName:"image\(item.tag).jpg"))
+                    postImage.append(PostingImage(imageKey: imageType?.getNameItem() , pathImage: "", image: chooseImage.image, imageName:"image\(item.tag).jpg"))
                 }
             }
             
@@ -101,7 +102,7 @@ class UploadImageVC: BaseViewController {
                     let chooseImage = self.arrViewImage[item.tag]
                     let imageType = ImageKeyTraTruoc(rawValue: item.tag)
                     
-                    postImage.append(PostingImage(imageKey: imageType?.getNameItem() , pathImage: nil, image: chooseImage.image, imageName:"image\(item.tag).jpg"))
+                    postImage.append(PostingImage(imageKey: imageType?.getNameItem() , pathImage: "", image: chooseImage.image, imageName:"image\(item.tag).jpg"))
                 }
             }
             
@@ -109,8 +110,9 @@ class UploadImageVC: BaseViewController {
         
         self.showLoadingIndicator(inView: self.view, title: "")
         ServiceManager.shared.uploadImge(bytype: typeVC!, simObj: self.simObj!, cateObj: self.cateObj!, listImage: postImage, _completion: { (codeRespone, strMessage) in
-            self.showToastFailure(message: "Tải ảnh thất bại")
+            self.showToastFailure(message: strMessage)
             self.dismissLoadingIndicator(inView: self.view)
+            
         })
     }
     
@@ -126,7 +128,7 @@ class UploadImageVC: BaseViewController {
                 self?.dismiss(animated: true, completion: nil)
                 self?.showButtonSend()
             }
-            
+//            self.pushVC(libraryViewController)
             self.present(libraryViewController, animated: true, completion: nil)
         })
         let saveAction = UIAlertAction(title: "Máy ảnh", style: .default, handler: {
@@ -135,6 +137,7 @@ class UploadImageVC: BaseViewController {
                 self?.arrViewImage[(self?.btIndexSelect)!].image = image
                 self?.dismiss(animated: true, completion: nil)
             }
+//            self.pushVC(cameraViewController)
             self.present(cameraViewController, animated: true, completion: nil)
         })
         let cancelAction = UIAlertAction(title: "Đóng", style: .cancel, handler: {
@@ -146,6 +149,10 @@ class UploadImageVC: BaseViewController {
         optionMenu.addAction(cancelAction)
         
         self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    func reset() {
+        
     }
     
 }

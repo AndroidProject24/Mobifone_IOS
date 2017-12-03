@@ -32,7 +32,7 @@ class PopupVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.showBannerVideo()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(PopupVC.keyboardWillShow(_:)),
                                                name: .UIKeyboardWillShow, object: nil)
@@ -78,7 +78,7 @@ class PopupVC: BaseViewController {
         }
     }
     
-    // maMARK: - Action
+    // MARK: - Action
     @IBAction func onTapBtDissmis(_ sender: UIButton) {
         self.view.endEditing(true)
         self.dismissVC(completion: nil)

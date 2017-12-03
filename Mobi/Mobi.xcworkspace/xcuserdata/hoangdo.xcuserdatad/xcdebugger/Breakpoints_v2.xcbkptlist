@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mobi/Services/ServiceManager.swift"
+            timestampString = "534013349.413171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "checkVas(_:strFrom:strTo:_completion:_failed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobi.ServiceManager.checkVas(Swift.String, strFrom: Swift.String, strTo: Swift.String, _completion: (Mobi.CodeResponse, Swift.String) -&gt; (), _failed: (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Mobi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/DeskTop/Working/Mobifone_IOS/Mobi/Mobi/Services/ServiceManager.swift"
+                  timestampString = "534013349.529362"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "380"
+                  endingLineNumber = "380"
+                  offsetFromSymbolStart = "1720">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Mobi.ServiceManager.checkVas(Swift.String, strFrom: Swift.String, strTo: Swift.String, _completion: (Mobi.CodeResponse, Swift.String) -&gt; (), _failed: (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Mobi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/DeskTop/Working/Mobifone_IOS/Mobi/Mobi/Services/ServiceManager.swift"
+                  timestampString = "534013349.53181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

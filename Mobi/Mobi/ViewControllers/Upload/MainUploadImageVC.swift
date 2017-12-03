@@ -27,6 +27,7 @@ class MainUploadImageVC: BaseViewController {
         
         
         let newsTraTruocVC = UploadImageVC.initWithStoryboard()
+        newsTraTruocVC.customNavigationController = self.navigationController
         newsTraTruocVC.title = "TRẢ TRƯỚC"
         newsTraTruocVC.typeVC = UploadImageType.ImageTraTruoc
         controllerArray.append(newsTraTruocVC)
@@ -38,12 +39,14 @@ class MainUploadImageVC: BaseViewController {
         tabBarVC.title = "TRẢ SAU"
         
         tabViewController1.typeVC = UploadImageType.ImageTraSauCaNhan
+        tabViewController1.customNavigationController = self.navigationController
         tabViewController1.tabBarItem = UITabBarItem(
             title: NSLocalizedString("M_MYSELF", comment: ""),
             image: UIImage(named: "ic_home"),
             tag: 1)
         
         tabViewController2.typeVC = UploadImageType.ImageTraSauCongTy
+        tabViewController2.customNavigationController = self.navigationController
         tabViewController2.tabBarItem = UITabBarItem(
             title: NSLocalizedString("M_COMPANY", comment: ""),
             image:UIImage(named: "ic_business") ,
@@ -95,17 +98,15 @@ class MainUploadImageVC: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if (self.pageMenu?.view.frame.origin.y)! < 0 {
+            var newFrame = self.pageMenu?.view.frame
+            newFrame?.y = 0
+            self.pageMenu?.view.frame = newFrame!
+        }
     }
-    */
-
+    
 }
 
 extension MainUploadImageVC: CAPSPageMenuDelegate {

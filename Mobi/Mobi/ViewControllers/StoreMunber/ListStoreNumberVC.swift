@@ -189,7 +189,6 @@ extension ListStoreNumberVC : UITableViewDelegate, UITableViewDataSource {
 
 extension ListStoreNumberVC : ListStoreNumberTableCellDelegate {
     func onTapButtonAddShopping(_ cell: ListStoreNumberTableCell) {
-        
         if self.storeNumber == .TraSau || self.storeNumber == .CamKet || self.storeNumber == .TraTruoc {
             let vc = PopupVC.initWithStoryboard()
             vc.customNavigationController = self.customNavigationController

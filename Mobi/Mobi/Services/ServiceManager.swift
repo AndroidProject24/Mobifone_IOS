@@ -243,17 +243,66 @@ class ServiceManager {
             }
         }
     }
+   
+    
+//    MARK: - VAS
     
     
     /// <#Description#>
     ///
+    /// - Parameters:
+    ///   - _completion: <#_completion description#>
+    ///   - _failed: <#_failed description#>
+    func listVas(_completion:@escaping(_ code: CodeResponse, _ dataResponse: [VasObj]?) -> Void, _failed:@escaping(_ message: String?) -> Void) {
+        
+        let url = urlAPI + "thongtingoicuoc"
+        Alamofire.request(url, method: .get).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value as? [String:Any] {
+                    let feature = Mapper<VasMapper>().map(JSONObject: data)
+                    
+                    _completion(.CODE_SUCCESS, feature!.detail)
+                }
+            case .failure( _):
+                _completion(.CODE_FAILURE, nil)
+            }
+        }
+    }
+   
+    /// <#Description#>
+    ///
     /// - Parameter userObj: <#userObj description#>
     /// - Returns: <#return value description#>
-    func captcha(byUserObj userObj: UserObj) -> String {
-        return urlAPI + "captcha?auth_code=\(userObj.auth_code!)&iduser=\(userObj.id!)"
+    func captcha(byUserObj userObj: UserObj, _completion:@escaping(_ dataResponse: Data) -> Void) {
+        let headers = [
+            "cache-control": "no-cache"
+        ]
+        let request = NSMutableURLRequest(url: NSURL(string: urlAPI + "captcha?auth_code=\(userObj.auth_code!)&iduser=\(userObj.id!)")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+            } else {
+                DispatchQueue.main.async {
+                    _completion(data!)
+                }
+            }
+        })
+        
+        dataTask.resume()
     }
     
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - type: <#type description#>
+    ///   - _completion: <#_completion description#>
     func category(byType type:CategoryType, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [CategoryObj]?) -> Void) {
         let url = urlAPI + "theloai/\(type.rawValue)"
         
@@ -271,6 +320,81 @@ class ServiceManager {
         }
     }
     
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - strPhone: <#strPhone description#>
+    ///   - strCapcha: <#strCapcha description#>
+    ///   - strCode: <#strCode description#>
+    ///   - _completion: <#_completion description#>
+    ///   - _failed: <#_failed description#>
+    func buyVas(_ strPhone: String, strCapcha: String, strCode: String, _completion:@escaping(_ code: CodeResponse, _ message: String) -> Void, _failed:@escaping(_ message: String?) -> Void) {
+        
+        let url = urlAPI + "banvas"
+        let parameters: Parameters = [
+            "sdt" : strPhone,
+            "capcha" : strCapcha,
+            "magoi" : strCode,
+            "auth_code" : UserObj.currentUserProfile.auth_code!,
+            "iduser" : UserObj.currentUserProfile.id!
+        ]
+        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value as? [String:Any] {
+                    let feature = Mapper<UserMapper>().map(JSONObject: data)
+                    feature?.error = Int(String(describing: data["error"]!))
+                    
+                    if (feature?.error)! > 0 {
+                        _completion(.CODE_FAILURE, (feature?.reason)!)
+                    } else {
+                        _completion(.CODE_SUCCESS, (feature?.reason)!)
+                    }
+                }
+            case .failure( _):
+                _failed("")
+            }
+        }
+    }
+    
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - strPhone: <#strPhone description#>
+    ///   - strFrom: <#strFrom description#>
+    ///   - strTo: <#strTo description#>
+    ///   - _completion: <#_completion description#>
+    ///   - _failed: <#_failed description#>
+    func checkVas(_ strPhone: String, strFrom: String, strTo: String, _completion:@escaping(_ code: CodeResponse, _ message: String) -> Void, _failed:@escaping(_ message: String?) -> Void) {
+        
+        let url = urlAPI + "smsvas"
+        let parameters: Parameters = [
+            "sdt" : strPhone,
+            "from" : strFrom,
+            "to" : strTo,
+            "auth_code" : UserObj.currentUserProfile.auth_code!,
+            "iduser" : UserObj.currentUserProfile.id!
+        ]
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value as? [String:Any] {
+                    let feature = Mapper<UserMapper>().map(JSONObject: data)
+                    feature?.error = Int(String(describing: data["error"]!))
+                    
+                    if (feature?.error)! > 0 {
+                        _completion(.CODE_FAILURE, (feature?.reason)!)
+                    } else {
+                        _completion(.CODE_SUCCESS, (feature?.reason)!)
+                    }
+                }
+            case .failure( _):
+                _failed("")
+            }
+        }
+    }
     
 //    MARK: - CONG NO
     func listCongNo(_completion:@escaping(_ code: CodeResponse, _ dataResponse: [CongNoObj]?) -> Void, _failed:@escaping(_ message: String?) -> Void) {
@@ -324,10 +448,10 @@ class ServiceManager {
         
         var url = ""
         let parameters: Parameters = [
-//            "auth_code" : "UserObj.currentUserProfile.auth_code!",
-//            "iduser" : "UserObj.currentUserProfile.id!",
-            "auth_code" : "78c536d0bb4891dd877f059707f1d557",
-            "iduser" : "2",
+            "auth_code" : UserObj.currentUserProfile.auth_code!,
+            "iduser" : UserObj.currentUserProfile.id!,
+//            "auth_code" : "78c536d0bb4891dd877f059707f1d557",
+//            "iduser" : "2",
             "sdt" : simObj.name!,
             "idloai" : cateObj.idloai!
         ]
@@ -357,7 +481,7 @@ class ServiceManager {
             
             for image in listImage {
                 if let data = image.data {
-                    multipartFormData.append(data, withName: image.imageKey!, mimeType: "image/jpeg")
+                    multipartFormData.append(data, withName: image.imageKey!, fileName: image.imageName!, mimeType: "image/jpeg")
                 }
             }
         }, to: url, headers: headers)
@@ -370,8 +494,13 @@ class ServiceManager {
                 })
                 
                 upload.responseJSON { response in
-                    print(response.result)
-                    _completion(.CODE_SUCCESS, "")
+//                    print(response.result)
+                    if let data = response.result.value as? [String:Any] {
+                        let feature = Mapper<CheckPhoneMapper>().map(JSONObject: data)
+                        
+                        _completion(.CODE_SUCCESS, (feature?.reason)!)
+                    }
+                    
                 }
                 
             case .failure( _):

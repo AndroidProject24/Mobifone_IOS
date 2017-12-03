@@ -134,7 +134,8 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         
         // vas
         if indexPath.row == 5 {
-            
+            let vasVC = VasVC.initWithStoryboard()
+            self.pushVC(vasVC)
         }
         
         // Thanh Toan Tros

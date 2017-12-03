@@ -65,8 +65,18 @@
 		80FFE5F61F8A899C00AA8A3B /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F51F8A899C00AA8A3B /* NewsVC.swift */; };
 		80FFE5F81F8A8C7D00AA8A3B /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F71F8A8C7D00AA8A3B /* BaseTabBarController.swift */; };
 		80FFE5FA1F8A8F7C00AA8A3B /* NewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE5F91F8A8F7C00AA8A3B /* NewsTableCell.swift */; };
+		A5019B311FACB795002AB1E0 /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B291FACB795002AB1E0 /* AnimationClass.swift */; };
+		A5019B321FACB795002AB1E0 /* CalendarPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B2A1FACB795002AB1E0 /* CalendarPopUp.swift */; };
+		A5019B331FACB795002AB1E0 /* CalendarPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5019B2B1FACB795002AB1E0 /* CalendarPopUp.xib */; };
+		A5019B341FACB795002AB1E0 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B2C1FACB795002AB1E0 /* CellView.swift */; };
+		A5019B351FACB795002AB1E0 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5019B2D1FACB795002AB1E0 /* CellView.xib */; };
+		A5019B361FACB795002AB1E0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B2E1FACB795002AB1E0 /* Extensions.swift */; };
+		A5019B371FACB795002AB1E0 /* PopupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B2F1FACB795002AB1E0 /* PopupContainer.swift */; };
+		A5019B381FACB795002AB1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B301FACB795002AB1E0 /* ViewController.swift */; };
+		A58760781FAC778500AF3E01 /* ErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58760771FAC778500AF3E01 /* ErrorVC.swift */; };
 		A5FA05471FA8ED6700347F5E /* VasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA05461FA8ED6700347F5E /* VasVC.swift */; };
 		A5FA05491FA8F39700347F5E /* VasCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA05481FA8F39700347F5E /* VasCheckVC.swift */; };
+		A5FA054B1FA97AB100347F5E /* VasObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA054A1FA97AB100347F5E /* VasObj.swift */; };
 		ED43F6AAA09D4A43DD34311A /* Pods_MobiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -149,8 +159,18 @@
 		80FFE5F91F8A8F7C00AA8A3B /* NewsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableCell.swift; sourceTree = "<group>"; };
 		8EE78621C26D00D7DDEFE3BC /* Pods-Mobi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.release.xcconfig"; sourceTree = "<group>"; };
 		A2FDAB44BFA9783C209223CE /* Pods_MobiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5019B291FACB795002AB1E0 /* AnimationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationClass.swift; sourceTree = "<group>"; };
+		A5019B2A1FACB795002AB1E0 /* CalendarPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPopUp.swift; sourceTree = "<group>"; };
+		A5019B2B1FACB795002AB1E0 /* CalendarPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarPopUp.xib; sourceTree = "<group>"; };
+		A5019B2C1FACB795002AB1E0 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		A5019B2D1FACB795002AB1E0 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		A5019B2E1FACB795002AB1E0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A5019B2F1FACB795002AB1E0 /* PopupContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainer.swift; sourceTree = "<group>"; };
+		A5019B301FACB795002AB1E0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A58760771FAC778500AF3E01 /* ErrorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorVC.swift; sourceTree = "<group>"; };
 		A5FA05461FA8ED6700347F5E /* VasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasVC.swift; sourceTree = "<group>"; };
 		A5FA05481FA8F39700347F5E /* VasCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasCheckVC.swift; sourceTree = "<group>"; };
+		A5FA054A1FA97AB100347F5E /* VasObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasObj.swift; sourceTree = "<group>"; };
 		C6455191756F287269F6FF54 /* Pods-MobiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobiTests/Pods-MobiTests.release.xcconfig"; sourceTree = "<group>"; };
 		E11F9D41722D770589A81BAB /* Pods-Mobi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobi/Pods-Mobi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,17 +350,9 @@
 			children = (
 				80EAAF261F849A2200173FA5 /* HUDManager.swift */,
 				809902341F81F2A5009AC3D1 /* Uitl.swift */,
-				80657CB91F76363D005B244D /* Custom */,
 				80657CBA1F76363D005B244D /* Extensions */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		80657CB91F76363D005B244D /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 		80657CBA1F76363D005B244D /* Extensions */ = {
@@ -354,6 +366,7 @@
 		80657CBB1F76363D005B244D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A5019B281FACB795002AB1E0 /* CalendarPopUp */,
 				8066FA4D1F8C72E100B9E2E0 /* PageMenu */,
 			);
 			path = Lib;
@@ -369,6 +382,7 @@
 				807662EA1F7A74A10065656A /* CategoryObj.swift */,
 				809E87A51F8A4DEE00DA4096 /* CongNoObj.swift */,
 				80F187301F8F7E3D0051D11A /* CheckPhoneObj.swift */,
+				A5FA054A1FA97AB100347F5E /* VasObj.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,8 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				809E7D9F1F76D2D000A0685B /* Data */,
-				809E7DA01F76D2D000A0685B /* Fonts */,
-				809E7DA21F76D2D000A0685B /* Music */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -463,20 +475,6 @@
 			children = (
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		809E7DA01F76D2D000A0685B /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		809E7DA21F76D2D000A0685B /* Music */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Music;
 			sourceTree = "<group>";
 		};
 		809E87A71F8A554C00DA4096 /* CongNo */ = {
@@ -520,11 +518,27 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		A5019B281FACB795002AB1E0 /* CalendarPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				A5019B291FACB795002AB1E0 /* AnimationClass.swift */,
+				A5019B2A1FACB795002AB1E0 /* CalendarPopUp.swift */,
+				A5019B2B1FACB795002AB1E0 /* CalendarPopUp.xib */,
+				A5019B2C1FACB795002AB1E0 /* CellView.swift */,
+				A5019B2D1FACB795002AB1E0 /* CellView.xib */,
+				A5019B2E1FACB795002AB1E0 /* Extensions.swift */,
+				A5019B2F1FACB795002AB1E0 /* PopupContainer.swift */,
+				A5019B301FACB795002AB1E0 /* ViewController.swift */,
+			);
+			path = CalendarPopUp;
+			sourceTree = "<group>";
+		};
 		A5FA05451FA8ED4900347F5E /* Vas */ = {
 			isa = PBXGroup;
 			children = (
 				A5FA05461FA8ED6700347F5E /* VasVC.swift */,
 				A5FA05481FA8F39700347F5E /* VasCheckVC.swift */,
+				A58760771FAC778500AF3E01 /* ErrorVC.swift */,
 			);
 			path = Vas;
 			sourceTree = "<group>";
@@ -630,6 +644,8 @@
 				80657C9D1F762543005B244D /* LaunchScreen.storyboard in Resources */,
 				804FDF7E1F88ECD1002923D8 /* Localizable.strings in Resources */,
 				80657C9A1F762543005B244D /* Assets.xcassets in Resources */,
+				A5019B331FACB795002AB1E0 /* CalendarPopUp.xib in Resources */,
+				A5019B351FACB795002AB1E0 /* CellView.xib in Resources */,
 				80657C981F762543005B244D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +672,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
@@ -670,6 +687,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
@@ -776,18 +794,22 @@
 				809902391F820006009AC3D1 /* Alias.swift in Sources */,
 				804FDF761F8789DF002923D8 /* HeaderTableViewCell.swift in Sources */,
 				8066FA621F8DFEFC00B9E2E0 /* ListStoreNumberTableCell.swift in Sources */,
+				A5FA054B1FA97AB100347F5E /* VasObj.swift in Sources */,
 				80FFE5F61F8A899C00AA8A3B /* NewsVC.swift in Sources */,
 				80657CC81F76363E005B244D /* ServiceError.swift in Sources */,
 				8066FA601F8DCC4300B9E2E0 /* ListStoreNumberVC.swift in Sources */,
 				804FDF671F860F59002923D8 /* RootVC.swift in Sources */,
 				807662E91F7A4B3E0065656A /* SimObj.swift in Sources */,
+				A5019B321FACB795002AB1E0 /* CalendarPopUp.swift in Sources */,
 				807662F21F7B48280065656A /* ChangePassVC.swift in Sources */,
 				809902351F81F2A5009AC3D1 /* Uitl.swift in Sources */,
 				8066FA551F8C72E100B9E2E0 /* CAPSPageMenu+Options.swift in Sources */,
+				A5019B371FACB795002AB1E0 /* PopupContainer.swift in Sources */,
 				A5FA05471FA8ED6700347F5E /* VasVC.swift in Sources */,
 				809E87A91F8A557A00DA4096 /* CongNoVC.swift in Sources */,
 				8066FA5E1F8DC9F100B9E2E0 /* StoreNumberVC.swift in Sources */,
 				807662E51F7952520065656A /* BaseObj.swift in Sources */,
+				A58760781FAC778500AF3E01 /* ErrorVC.swift in Sources */,
 				80F187311F8F7E3D0051D11A /* CheckPhoneObj.swift in Sources */,
 				804FDF6C1F8613F9002923D8 /* SlideMenuVC.swift in Sources */,
 				80FFE5F81F8A8C7D00AA8A3B /* BaseTabBarController.swift in Sources */,
@@ -797,6 +819,7 @@
 				807662FB1F7C0AA50065656A /* BaseViewController.swift in Sources */,
 				804874D11F89C53E00087F69 /* HomeItemCollectionCell.swift in Sources */,
 				80657CC51F76363E005B244D /* UserObj.swift in Sources */,
+				A5019B311FACB795002AB1E0 /* AnimationClass.swift in Sources */,
 				804FDF6A1F86138D002923D8 /* MenuNavigationVC.swift in Sources */,
 				80657CC71F76363E005B244D /* Constants.swift in Sources */,
 				804874D81F8A3DBC00087F69 /* SubHomeItemCollectionCell.swift in Sources */,
@@ -805,7 +828,9 @@
 				807662EE1F7B48040065656A /* LoginVC.swift in Sources */,
 				809E87AC1F8A5BDC00DA4096 /* CongNoTableCell.swift in Sources */,
 				80D6C5CD1F9609C000C61EE4 /* PopupVC.swift in Sources */,
+				A5019B381FACB795002AB1E0 /* ViewController.swift in Sources */,
 				8066FA5A1F8C72E100B9E2E0 /* CAPSPageMenuConfiguration.swift in Sources */,
+				A5019B341FACB795002AB1E0 /* CellView.swift in Sources */,
 				807662EB1F7A74A10065656A /* CategoryObj.swift in Sources */,
 				80EFEE341F974C5A0021CDB7 /* UploadImageVC.swift in Sources */,
 				80F1872F1F8F77C30051D11A /* CheckNumberVC.swift in Sources */,
@@ -820,6 +845,7 @@
 				8066FA571F8C72E100B9E2E0 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				A5FA05491FA8F39700347F5E /* VasCheckVC.swift in Sources */,
 				804FDF741F8789BE002923D8 /* BannerTableViewCell.swift in Sources */,
+				A5019B361FACB795002AB1E0 /* Extensions.swift in Sources */,
 				805BBC6B1F9BB16700D17F85 /* MainUploadImageVC.swift in Sources */,
 				804DADB71F8B894D007580B0 /* PromotionVC.swift in Sources */,
 				80657CC41F76363E005B244D /* ServiceManager.swift in Sources */,
@@ -925,7 +951,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -977,7 +1003,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

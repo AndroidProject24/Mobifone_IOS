@@ -9,7 +9,6 @@
 import UIKit
 
 class LoginVC: BaseViewController {
-    
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btLogin: UIButton!
@@ -28,7 +27,7 @@ class LoginVC: BaseViewController {
         self.btLogin.defaultButton()
         self.btLoginForGuest.defaultButton()
         
-    
+        
 //        emailField.detail = "Error, incorrect email"
 //        emailField.textColor = .black
 //        emailField.isClearIconButtonEnabled = true
@@ -49,6 +48,7 @@ class LoginVC: BaseViewController {
     }
     
     @IBAction func onTapBtLogin(_ sender: UIButton) {
+        self.showBannerVideo(0.1)
         self.showLoadingIndicator(inView: self.view, title: "")
         ServiceManager.shared.loginUser(byPassword: self.txtPassword!.text, byUsername: self.txtUserName!.text, _completion: { (CodeRespone, userObj) in
             userObj?.isGuest = false
@@ -65,6 +65,7 @@ class LoginVC: BaseViewController {
     }
     
     @IBAction func onTapBtLoginGuest(_ sender: UIButton) {
+        self.showBannerVideo(0.1)
         let user = UserObj()
         user.isGuest = true
         UserObj.currentUserProfile = user
@@ -75,15 +76,29 @@ class LoginVC: BaseViewController {
     }
     
     @IBAction func onTapBtForGetPassword(_ sender: UIButton) {
-        
+        self.showBannerVideo(0.1)
     }
 
     @IBAction func onTapBtRegister(_ sender: UIButton) {
+        self.showBannerVideo(0.1)
         let registerViewControler = RegisterVC.initWithStoryboard()
         self.pushVC(registerViewControler)
     }
     
+    @IBAction func onTapDismissKey(_ sender: UITapGestureRecognizer) {
+        self.dismissKeyboard()
+    }
 }
 
+extension LoginVC: UITextFieldDelegate {
 
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            self.txtPassword.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            self.btLogin.sendActions(for: UIControlEvents.touchUpInside)
+        }
+        return true
+    }
+    
+}

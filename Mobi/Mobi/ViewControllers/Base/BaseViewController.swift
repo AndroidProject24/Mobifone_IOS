@@ -17,8 +17,10 @@ class BaseViewController: UIViewController {
     var titleLabel: UILabel!
     var notiLabel: UILabel!
     
-    var isShowBanner: Bool! = true
+    var isShowBanner: Bool! = false
     var ggBannerView: GADBannerView!
+    var ggInterstitial: GADInterstitial!
+    
     
 //    fileprivate var hud: MBProgressHUD = MBProgressHUD()
     
@@ -61,7 +63,7 @@ class BaseViewController: UIViewController {
 //    private var dropDown: DropDown?
     
     deinit {
-        print("Deinit \(self.classForCoder)")
+//        print("Deinit \(self.classForCoder)")
     }
     
     override func viewDidLoad() {
@@ -194,15 +196,19 @@ class BaseViewController: UIViewController {
             return
         }
         
+        if (self.ggBannerView != nil) {
+            return
+        }
+        
         self.ggBannerView = GADBannerView.init(adSize: kGADAdSizeBanner)
         self.ggBannerView.adSize = kGADAdSizeBanner
         
         
         let request = GADRequest()
         // Sample device ID
-//                request.testDevices = [kGADSimulatorID];
+//        request.testDevices = [kGADSimulatorID, "44b324e56431f8cc849fbbc4a34c2f1e"];
 
-        //        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+//        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         ggBannerView.adUnitID = "ca-app-pub-4837358488793511/3750776743"
         ggBannerView.rootViewController = self
         ggBannerView.load(request)
@@ -225,9 +231,37 @@ class BaseViewController: UIViewController {
                                 constant: 0)
             ])
     }
+    
+    func showBannerVideo(_ numberAdd: CGFloat = 0.6) {
+        APPDELEGATE.intClick = APPDELEGATE.intClick + numberAdd
+//        print("\(APPDELEGATE.intClick)")
+        
+        if (APPDELEGATE.intClick <= 0.9) {
+            return
+        }
+        
+        createAndLoadInterstitial()
+        if ggInterstitial.isReady {
+            ggInterstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+        
+    }
+    
+    func createAndLoadInterstitial() {
+        
+        let request = GADRequest()
+        // Sample device ID
+//        request.testDevices = [kGADSimulatorID , "44b324e56431f8cc849fbbc4a34c2f1e"];
+        
+        ggInterstitial = GADInterstitial(adUnitID: "ca-app-pub-4837358488793511/2892866937")
+        ggInterstitial.delegate = self
+        ggInterstitial.load(request)
+    }
 }
 
-//extension LoginVC : GADBannerViewDelegate {
+//extension BaseObj : GADBannerViewDelegate {
 //    /// Tells the delegate an ad request loaded an ad.
 //    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
 //        print("adViewDidReceiveAd")
@@ -261,3 +295,41 @@ class BaseViewController: UIViewController {
 //        print("adViewWillLeaveApplication")
 //    }
 //}
+
+extension BaseViewController : GADInterstitialDelegate {
+    /// Tells the delegate an ad request succeeded.
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("interstitialDidReceiveAd")
+        APPDELEGATE.intClick = 0.1
+        self.ggInterstitial.present(fromRootViewController: self);
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that an interstitial will be presented.
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        print("interstitialWillPresentScreen")
+    }
+    
+    /// Tells the delegate the interstitial is to be animated off the screen.
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialWillDismissScreen")
+    }
+    
+    /// Tells the delegate the interstitial had been animated off the screen.
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialDidDismissScreen")
+//        self.createAndLoadInterstitial()
+    }
+    
+    /// Tells the delegate that a user click will open another app
+    /// (such as the App Store), backgrounding the current app.
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        print("interstitialWillLeaveApplication")
+    }
+}
+
+
