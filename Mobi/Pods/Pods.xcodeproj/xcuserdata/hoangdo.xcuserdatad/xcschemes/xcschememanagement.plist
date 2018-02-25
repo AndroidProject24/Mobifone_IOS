@@ -53,28 +53,28 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>ObjectMapper.xcscheme</key>
+		<key>MXParallaxHeader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>Pods-Mobi.xcscheme</key>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>Pods-MobiTests.xcscheme</key>
+		<key>Pods-Mobi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>PopupDialog.xcscheme</key>
+		<key>Pods-MobiTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
