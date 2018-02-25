@@ -17,7 +17,7 @@ class ErrorVC: BaseViewController {
     
     override func setupUI() {
         super.setupUI()
-        self.showBannerVideo(0.1)
+        self.showBannerVideo(0.3)
         
         self.navigationItem.title = NSLocalizedString("M_VAS", comment: "")
     }

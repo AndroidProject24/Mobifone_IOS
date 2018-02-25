@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import AlamofireImage
+import MXParallaxHeader
 
 class StoreNumberVC: BaseViewController {
     
     var pageMenu : CAPSPageMenu?
     var indexPage : Int? = 0
-    
+    var scrollView: MXScrollView!
+    var headerView: HeaderViewStoreNumber!
     
     static func initWithStoryboard() -> StoreNumberVC{
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StoreNumberVC") as! StoreNumberVC
-        return viewController;
+        return viewController
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isShowBanner = false
+        self.changeNavigationBarToTransparentStyle()
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Initialize view controllers to display and place in array
         var controllerArray : [UIViewController] = []
@@ -72,13 +77,37 @@ class StoreNumberVC: BaseViewController {
         
         // Initialize scroll menu
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height), pageMenuOptions: parameters)
-        
         pageMenu?.delegate = self
-        
         pageMenu?.moveToPage(self.indexPage!)
         
-        self.view.addSubview((pageMenu?.view)!)
+        // Initialize image view
         
+        headerView = HeaderViewStoreNumber.init(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 150))
+        
+        // Initialize parallax Header
+        scrollView = MXScrollView()
+        scrollView.parallaxHeader.view = headerView
+        scrollView.parallaxHeader.height = 150
+        scrollView.parallaxHeader.mode = MXParallaxHeaderMode.fill
+        scrollView.delegate = self
+        view.addSubview(scrollView)
+        
+        scrollView.addSubview((pageMenu?.view)!)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        scrollView.parallaxHeader.minimumHeight = topLayoutGuide.length
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.changeNavigationBarToDefaultStyle()
+//        self.navigationController?.isNavBarHidden = false
     }
     
     override func setupUI() {
@@ -86,22 +115,41 @@ class StoreNumberVC: BaseViewController {
         self.navigationItem.title = NSLocalizedString("M_STORE", comment: "")
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        var frame = view.frame
+        
+        scrollView.frame = frame
+        scrollView.contentSize = frame.size
+        
+//        frame.size.width /= 2
+        frame.size.height -= scrollView.parallaxHeader.minimumHeight
+        self.pageMenu?.view.frame = frame
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
+
+extension StoreNumberVC : MXScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        headerView.viewMaskTop.alpha = 1 - scrollView.parallaxHeader.progress
+    }
 }
 
 extension StoreNumberVC: CAPSPageMenuDelegate {
     
     func willMoveToPage(_ controller: UIViewController, index: Int) {
         print("Moving to page \(index)")
-        
     }
     
     func didMoveToPage(_ controller: UIViewController, index: Int) {
         print("Moved to page \(index)")
-        
+//pageMenu?.view.frame = CGRect(x: 0, y: CGFloat(index * 10), w: (pageMenu?.view.frame.width)!, h: (pageMenu?.view.frame.height)!)
     }
 }

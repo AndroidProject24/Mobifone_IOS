@@ -56,6 +56,8 @@ extension SubHomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.showBannerVideo(0.1)
+        
         if indexPath.row <= 3 {
             let listNumberVC = StoreNumberVC.initWithStoryboard()
             listNumberVC.indexPage = indexPath.row

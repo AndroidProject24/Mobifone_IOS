@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     var titleLabel: UILabel!
     var notiLabel: UILabel!
     
-    var isShowBanner: Bool! = false
+    var isShowBanner: Bool! = true
     var ggBannerView: GADBannerView!
     var ggInterstitial: GADInterstitial!
     
@@ -156,6 +156,7 @@ class BaseViewController: UIViewController {
     }
     
     @IBAction func leftMenuButtonClicked(_ sender: AnyObject) {
+        self.showBannerVideo(0.1)
         _ = self.navigationController?.popViewController(animated: true)
     }
     
@@ -234,9 +235,7 @@ class BaseViewController: UIViewController {
     
     func showBannerVideo(_ numberAdd: CGFloat = 0.6) {
         APPDELEGATE.intClick = APPDELEGATE.intClick + numberAdd
-//        print("\(APPDELEGATE.intClick)")
-        
-        if (APPDELEGATE.intClick <= 0.9) {
+        if (APPDELEGATE.intClick <= numShowBanner) {
             return
         }
         
@@ -300,7 +299,7 @@ extension BaseViewController : GADInterstitialDelegate {
     /// Tells the delegate an ad request succeeded.
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         print("interstitialDidReceiveAd")
-        APPDELEGATE.intClick = 0.1
+        APPDELEGATE.intClick = APPDELEGATE.intClick - numShowBanner
         self.ggInterstitial.present(fromRootViewController: self);
     }
     

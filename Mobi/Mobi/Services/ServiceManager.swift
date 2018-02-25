@@ -221,7 +221,7 @@ class ServiceManager {
     ///   - firstNumber: <#firstNumber description#>
     ///   - typeNumber: <#typeNumber description#>
     ///   - _completion: <#_completion description#>
-    func searchSim(bySearch search: String?, byPage page: Int, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: [SimObj]?, _ nextLink: String?) -> Void) {
+    func searchSim(bySearch search: String?, byPage page: Int, byStore store: String?, byFirstNumber firstNumber: String?, byTypeNumber typeNumber: String?, _completion:@escaping(_ code: CodeResponse, _ dataResponse: SimMapper?, _ nextLink: String?) -> Void) {
         let url = urlAPI + "timsim"
         let parameters: Parameters = [
             "dau" : firstNumber!,
@@ -236,7 +236,7 @@ class ServiceManager {
                 if let data = response.result.value as? [String:Any] {
                     let feature = Mapper<SimMapper>().map(JSONObject: data)
                     
-                    _completion(.CODE_SUCCESS, feature!.detail, feature?.nextLink)
+                    _completion(.CODE_SUCCESS, feature, feature?.nextLink)
                 }
             case .failure( _):
                 _completion(.CODE_FAILURE, nil, "")
@@ -450,8 +450,6 @@ class ServiceManager {
         let parameters: Parameters = [
             "auth_code" : UserObj.currentUserProfile.auth_code!,
             "iduser" : UserObj.currentUserProfile.id!,
-//            "auth_code" : "78c536d0bb4891dd877f059707f1d557",
-//            "iduser" : "2",
             "sdt" : simObj.name!,
             "idloai" : cateObj.idloai!
         ]

@@ -53,7 +53,7 @@ extension SlideMenuVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             if indexPath.section == 2 && indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self), for: indexPath) as! HeaderTableViewCell
-                cell.config(title: arrayStringMenuLeft[indexPath.section][0][indexPath.row])
+                cell.config(title:arrayStringMenuLeft[indexPath.section][0][indexPath.row])
                 return cell
             
             } else {

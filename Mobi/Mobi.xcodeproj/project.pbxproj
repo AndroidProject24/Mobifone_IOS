@@ -73,7 +73,12 @@
 		A5019B361FACB795002AB1E0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B2E1FACB795002AB1E0 /* Extensions.swift */; };
 		A5019B371FACB795002AB1E0 /* PopupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B2F1FACB795002AB1E0 /* PopupContainer.swift */; };
 		A5019B381FACB795002AB1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5019B301FACB795002AB1E0 /* ViewController.swift */; };
+		A504128B1FD853F2006C9FB2 /* CongNoListImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504128A1FD853F2006C9FB2 /* CongNoListImageVC.swift */; };
+		A504128D1FD855D5006C9FB2 /* CongNoListImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504128C1FD855D5006C9FB2 /* CongNoListImageTableCell.swift */; };
+		A516F65720427A1D00064591 /* HeaderViewStoreNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = A516F65620427A1D00064591 /* HeaderViewStoreNumber.xib */; };
+		A516F65A20427C4D00064591 /* HeaderViewStoreNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A516F65920427C4D00064591 /* HeaderViewStoreNumber.swift */; };
 		A58760781FAC778500AF3E01 /* ErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58760771FAC778500AF3E01 /* ErrorVC.swift */; };
+		A5E5C21A200C644D00D931A8 /* DialogPromotionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5C219200C644D00D931A8 /* DialogPromotionVC.swift */; };
 		A5FA05471FA8ED6700347F5E /* VasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA05461FA8ED6700347F5E /* VasVC.swift */; };
 		A5FA05491FA8F39700347F5E /* VasCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA05481FA8F39700347F5E /* VasCheckVC.swift */; };
 		A5FA054B1FA97AB100347F5E /* VasObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA054A1FA97AB100347F5E /* VasObj.swift */; };
@@ -167,7 +172,12 @@
 		A5019B2E1FACB795002AB1E0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A5019B2F1FACB795002AB1E0 /* PopupContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainer.swift; sourceTree = "<group>"; };
 		A5019B301FACB795002AB1E0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A504128A1FD853F2006C9FB2 /* CongNoListImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoListImageVC.swift; sourceTree = "<group>"; };
+		A504128C1FD855D5006C9FB2 /* CongNoListImageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongNoListImageTableCell.swift; sourceTree = "<group>"; };
+		A516F65620427A1D00064591 /* HeaderViewStoreNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewStoreNumber.xib; sourceTree = "<group>"; };
+		A516F65920427C4D00064591 /* HeaderViewStoreNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewStoreNumber.swift; sourceTree = "<group>"; };
 		A58760771FAC778500AF3E01 /* ErrorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorVC.swift; sourceTree = "<group>"; };
+		A5E5C219200C644D00D931A8 /* DialogPromotionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogPromotionVC.swift; sourceTree = "<group>"; };
 		A5FA05461FA8ED6700347F5E /* VasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasVC.swift; sourceTree = "<group>"; };
 		A5FA05481FA8F39700347F5E /* VasCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasCheckVC.swift; sourceTree = "<group>"; };
 		A5FA054A1FA97AB100347F5E /* VasObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VasObj.swift; sourceTree = "<group>"; };
@@ -249,6 +259,7 @@
 				809E87AB1F8A5BDC00DA4096 /* CongNoTableCell.swift */,
 				80FFE5F91F8A8F7C00AA8A3B /* NewsTableCell.swift */,
 				8066FA611F8DFEFC00B9E2E0 /* ListStoreNumberTableCell.swift */,
+				A504128C1FD855D5006C9FB2 /* CongNoListImageTableCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 		80657CB31F76363D005B244D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A516F65820427BCC00064591 /* Custom */,
 				804FDF771F8798E2002923D8 /* CollectionViewCells */,
 				804FDF701F878932002923D8 /* TableViewCells */,
 			);
@@ -481,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				809E87A81F8A557A00DA4096 /* CongNoVC.swift */,
+				A504128A1FD853F2006C9FB2 /* CongNoListImageVC.swift */,
 			);
 			path = CongNo;
 			sourceTree = "<group>";
@@ -489,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				80D6C5CC1F9609C000C61EE4 /* PopupVC.swift */,
+				A5E5C219200C644D00D931A8 /* DialogPromotionVC.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
@@ -531,6 +545,15 @@
 				A5019B301FACB795002AB1E0 /* ViewController.swift */,
 			);
 			path = CalendarPopUp;
+			sourceTree = "<group>";
+		};
+		A516F65820427BCC00064591 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A516F65620427A1D00064591 /* HeaderViewStoreNumber.xib */,
+				A516F65920427C4D00064591 /* HeaderViewStoreNumber.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		A5FA05451FA8ED4900347F5E /* Vas */ = {
@@ -643,6 +666,7 @@
 			files = (
 				80657C9D1F762543005B244D /* LaunchScreen.storyboard in Resources */,
 				804FDF7E1F88ECD1002923D8 /* Localizable.strings in Resources */,
+				A516F65720427A1D00064591 /* HeaderViewStoreNumber.xib in Resources */,
 				80657C9A1F762543005B244D /* Assets.xcassets in Resources */,
 				A5019B331FACB795002AB1E0 /* CalendarPopUp.xib in Resources */,
 				A5019B351FACB795002AB1E0 /* CellView.xib in Resources */,
@@ -674,8 +698,8 @@
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/REFrostedViewController/REFrostedViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftOverlays/SwiftOverlays.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -689,8 +713,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/REFrostedViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverlays.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
@@ -801,14 +825,17 @@
 				804FDF671F860F59002923D8 /* RootVC.swift in Sources */,
 				807662E91F7A4B3E0065656A /* SimObj.swift in Sources */,
 				A5019B321FACB795002AB1E0 /* CalendarPopUp.swift in Sources */,
+				A5E5C21A200C644D00D931A8 /* DialogPromotionVC.swift in Sources */,
 				807662F21F7B48280065656A /* ChangePassVC.swift in Sources */,
 				809902351F81F2A5009AC3D1 /* Uitl.swift in Sources */,
+				A516F65A20427C4D00064591 /* HeaderViewStoreNumber.swift in Sources */,
 				8066FA551F8C72E100B9E2E0 /* CAPSPageMenu+Options.swift in Sources */,
 				A5019B371FACB795002AB1E0 /* PopupContainer.swift in Sources */,
 				A5FA05471FA8ED6700347F5E /* VasVC.swift in Sources */,
 				809E87A91F8A557A00DA4096 /* CongNoVC.swift in Sources */,
 				8066FA5E1F8DC9F100B9E2E0 /* StoreNumberVC.swift in Sources */,
 				807662E51F7952520065656A /* BaseObj.swift in Sources */,
+				A504128B1FD853F2006C9FB2 /* CongNoListImageVC.swift in Sources */,
 				A58760781FAC778500AF3E01 /* ErrorVC.swift in Sources */,
 				80F187311F8F7E3D0051D11A /* CheckPhoneObj.swift in Sources */,
 				804FDF6C1F8613F9002923D8 /* SlideMenuVC.swift in Sources */,
@@ -823,6 +850,7 @@
 				804FDF6A1F86138D002923D8 /* MenuNavigationVC.swift in Sources */,
 				80657CC71F76363E005B244D /* Constants.swift in Sources */,
 				804874D81F8A3DBC00087F69 /* SubHomeItemCollectionCell.swift in Sources */,
+				A504128D1FD855D5006C9FB2 /* CongNoListImageTableCell.swift in Sources */,
 				8066FA591F8C72E100B9E2E0 /* CAPSPageMenu.swift in Sources */,
 				807662E71F7A14E10065656A /* TypeSimObj.swift in Sources */,
 				807662EE1F7B48040065656A /* LoginVC.swift in Sources */,

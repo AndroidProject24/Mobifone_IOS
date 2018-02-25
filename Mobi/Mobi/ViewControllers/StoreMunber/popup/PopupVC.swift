@@ -11,7 +11,6 @@ import UIKit
 class PopupVC: BaseViewController {
 
     @IBOutlet weak var LayoutConstraintCenter: NSLayoutConstraint!
-    
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var viewDropdown: UIView!
     @IBOutlet weak var lbDropDown: UILabel!
@@ -32,6 +31,7 @@ class PopupVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         self.showBannerVideo()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(PopupVC.keyboardWillShow(_:)),
@@ -43,6 +43,7 @@ class PopupVC: BaseViewController {
         self.loadCate()
         self.viewDropdown.makeCornerAndShadowAndBorder(3, shadowRadius: 1, shadowOpacity: 0.2, borderWidth: 1)
         self.viewMain.makeCornerAndShadowAndBorder(5, shadowRadius: 2, shadowOpacity: 0.2, borderWidth: 1)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

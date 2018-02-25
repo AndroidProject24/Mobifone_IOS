@@ -21,7 +21,10 @@ class MainUploadImageVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.isShowBanner = false
+        self.showBannerVideo(0.2)
+        
         // Initialize view controllers to display and place in array
         var controllerArray : [UIViewController] = []
         

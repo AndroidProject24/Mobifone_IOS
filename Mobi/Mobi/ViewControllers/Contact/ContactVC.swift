@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 
 class ContactVC: BaseViewController {
+    
+    @IBOutlet weak var lbVersion: UILabel!
     
     static func initWithStoryboard() -> ContactVC{
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactVC") as! ContactVC
@@ -17,13 +20,14 @@ class ContactVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showBannerVideo(0.1)
+        self.showBannerVideo(0.4)
         // Do any additional setup after loading the view.
     }
     
     override func setupUI() {
         super.setupUI()
         self.navigationItem.title = NSLocalizedString("M_CONTAST", comment: "")
+        self.lbVersion.text = "v\(String(describing: ez.appVersion!)).\(String(describing: ez.appBuild!))"
     }
 
     override func didReceiveMemoryWarning() {

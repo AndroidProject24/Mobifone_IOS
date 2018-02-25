@@ -35,7 +35,7 @@ class SimMapper: BaseObj {
     
     override func mapping(map: Map) {
         detail <- map["data"]
-        idk <- map["idk"]
+        idk <- map["idkm"]
         totalrows <- map["totalrows"]
         nextLink <- map["page.nextLink"]
 //        error <- map["error"]

@@ -22,7 +22,7 @@ class CongNoVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.showBannerVideo(0.1)
+        self.showBannerVideo(0.3)
     }
     
     override func setupUI() {
@@ -64,5 +64,13 @@ extension CongNoVC : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CongNoTableCell.self), for: indexPath) as! CongNoTableCell
         cell.config(congNoObj: congNoObj)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let congNoObj = self.arrCongNo![indexPath.row]
+        let vc = CongNoListImageVC.initWithStoryboard()
+        vc.createURLimage(congNoObj)
+        
+        self.pushVC(vc)
     }
 }

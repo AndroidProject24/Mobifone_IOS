@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ListStoreNumberVCDelegate {
+    func ListStoreNumberVC_ScrollViewDidScroll(_ scrollView: UIScrollView)
+}
+
 class ListStoreNumberVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -15,10 +19,13 @@ class ListStoreNumberVC: BaseViewController {
     @IBOutlet weak var btType: UIButton!
     @IBOutlet weak var btFisrtNumber: UIButton!
     
+    var delegate: ListStoreNumberVCDelegate? = nil
+    
     var customNavigationController: UINavigationController?
     
     var arrSim : [SimObj]? = []
     var arrTypeSim : [TypeSimObj]? = []
+    var simMapper : SimMapper? =  nil
     var storeNumber : StoreNumber = .TraSau
     var pageIndex : Int! = 1
     var firstNumber : String! = ""
@@ -41,7 +48,7 @@ class ListStoreNumberVC: BaseViewController {
     override func setupUI() {
         super .setupUI()
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44.0
+        self.tableView.estimatedRowHeight = 64.0
         self.loadData()
     }
     
@@ -52,7 +59,7 @@ class ListStoreNumberVC: BaseViewController {
     
     func loadTypeSim() {
         ServiceManager.shared.typeSim(_completion: { (codeRespone, typeSim) in
-            self.arrTypeSim?.append(contentsOf: typeSim as! [TypeSimObj])
+            self.arrTypeSim?.append(contentsOf: typeSim as [TypeSimObj]!)
             let firstTypeSim = TypeSimObj()
             firstTypeSim.tenKey = ""
             firstTypeSim.tenName = "Dạng sim"
@@ -64,10 +71,11 @@ class ListStoreNumberVC: BaseViewController {
         self.showLoadingIndicator(inView: self.view, title: "")
         ServiceManager.shared.searchSim(bySearch: self.txtSearch.text, byPage: self.pageIndex, byStore: self.storeNumber.getString(), byFirstNumber: self.firstNumber, byTypeNumber: self.typeNumber) { (codeRespone, simObj, nextLink) in
             if self.arrSim == nil {
-                self.arrSim = simObj
+                self.arrSim = simObj?.detail!
             } else {
                 if simObj != nil {
-                    self.arrSim?.append(contentsOf: simObj as! [SimObj])
+                    self.arrSim?.append(contentsOf: (simObj?.detail)!)
+                    self.simMapper = simObj
                 }
             }
             self.tableView.reloadData()
@@ -185,9 +193,33 @@ extension ListStoreNumberVC : UITableViewDelegate, UITableViewDataSource {
             self.loadData()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.storeNumber == .TraSau || self.storeNumber == .CamKet || self.storeNumber == .TraTruoc {
+            let simObj = self.arrSim![indexPath.row]
+            
+            let vc = PopupVC.initWithStoryboard()
+            vc.customNavigationController = self.customNavigationController
+            vc.storeNumber = self.storeNumber
+            vc.simObj = simObj
+            
+            self.presentVC(vc)
+        }
+    }
 }
 
 extension ListStoreNumberVC : ListStoreNumberTableCellDelegate {
+    func onTapButtonGoiCuoc(_ cell: ListStoreNumberTableCell) {
+        if self.storeNumber == .TraSau || self.storeNumber == .CamKet || self.storeNumber == .TraTruoc {
+            let vc = DialogPromotionVC.initWithStoryboard()
+            vc.customNavigationController = self.customNavigationController
+            vc.storeNumber = self.storeNumber
+            vc.idkm = (self.simMapper?.idk)!
+            
+            self.presentVC(vc)
+        }
+    }
+    
     func onTapButtonAddShopping(_ cell: ListStoreNumberTableCell) {
         if self.storeNumber == .TraSau || self.storeNumber == .CamKet || self.storeNumber == .TraTruoc {
             let vc = PopupVC.initWithStoryboard()

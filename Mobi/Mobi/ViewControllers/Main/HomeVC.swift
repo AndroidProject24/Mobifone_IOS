@@ -34,6 +34,7 @@ class HomeVC: BaseViewController {
     }
     
     override func leftMenuButtonClicked(_ sender: AnyObject) {
+        self.showBannerVideo(0.2)
         self.view.endEditing(true)
         self.frostedViewController.view.endEditing(true)
         self.frostedViewController.presentMenuViewController()
@@ -74,6 +75,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.showBannerVideo(0.1)
         // kho so
         if indexPath.row == 0 {
             let subHome = SubHomeVC.initWithStoryboard()

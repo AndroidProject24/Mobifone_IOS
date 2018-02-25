@@ -13,7 +13,7 @@ class CongNoObj: Mappable {
     var name: String?
     var date: String?
     var payment: String?
-    
+    var images: String?
     
     required init?(map: Map) {
         
@@ -24,6 +24,7 @@ class CongNoObj: Mappable {
         name <- map["TenLoai"]
         date <- map["date"]
         payment <- map["thanhtoan"]
+        images <- map["images"]
     }
     
 

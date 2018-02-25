@@ -16,9 +16,11 @@ let APPDELEGATE: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 // MARK: - URL
 let urlAPI: String = "http://n3t.top/test/api/"
-let urlImage = String(format: "http://bsdev.acuteksolutions.com/restapi/rest/%d/images/")
+let urlIMAGEHOST: String = "http://n3t.top/test/asset/hinh/upfile/"
+let urlWebPromotion: String = "http://n3t.top/test/fire/viewbaiviet/"
 
-
+// earn money
+let numShowBanner : CGFloat = 0.9
 
 // MARK: - Array string slide menu
 let arrayStringMenuLeft:[[[String]]]   = [[],
@@ -218,4 +220,9 @@ struct PostingImage {
             return nil
         }
     }
+}
+
+enum PopupVCType: Int {
+    case FormBuySim = 0
+    case ShowPromotion
 }

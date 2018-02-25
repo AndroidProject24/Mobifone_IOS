@@ -24,6 +24,7 @@ class NewsVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isShowBanner = false
+        self.showBannerVideo(0.2)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         self.loadData()
@@ -65,6 +66,7 @@ extension NewsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.showBannerVideo(0.2)
         let categoryObj = self.arrCongNo![indexPath.row]
         
         let webViewVC = WebViewVC.initWithStoryboard()

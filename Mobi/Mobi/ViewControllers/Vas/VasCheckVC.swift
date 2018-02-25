@@ -60,7 +60,7 @@ class VasCheckVC: BaseViewController {
     
     // MARK: - Action
     @IBAction func onTapBtCheck(_ sender: UIButton) {
-        self.showBannerVideo(0.1)
+        self.showBannerVideo(0.2)
         self.showLoadingIndicator(inView: self.view)
         ServiceManager.shared.checkVas(self.txtPhone.text!, strFrom: self.txtStartDate.text!, strTo: self.txtEndDate.text!, _completion: { (codeRespon, reason) in
             self.dismissLoadingIndicator(inView: self.view)

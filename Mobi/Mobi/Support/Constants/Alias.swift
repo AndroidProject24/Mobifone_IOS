@@ -10,3 +10,6 @@ import UIKit
 
 let loginKey = "LOGIN"
 let userKey = "USERPROFILE"
+
+// earn money
+let clinkNumber = "CLICK_NUMBER"

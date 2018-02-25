@@ -10,6 +10,7 @@ import UIKit
 
 protocol ListStoreNumberTableCellDelegate {
     func onTapButtonAddShopping(_ cell: ListStoreNumberTableCell)
+    func onTapButtonGoiCuoc(_ cell: ListStoreNumberTableCell)
 }
 
 class ListStoreNumberTableCell: UITableViewCell {
@@ -17,7 +18,7 @@ class ListStoreNumberTableCell: UITableViewCell {
     @IBOutlet weak var viewMains: UIView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
-    @IBOutlet weak var lbGoiCuoc: UILabel!
+    @IBOutlet weak var btGoiCuoc: UIButton!
     
     var delegate: ListStoreNumberTableCellDelegate?
     var _simObj: SimObj!
@@ -39,10 +40,14 @@ class ListStoreNumberTableCell: UITableViewCell {
         self._simObj = simObj
         self.lbTitle.text = simObj.name
         self.lbPrice.text = "\(String(describing: simObj.price!)) VNĐ"
-        self.lbGoiCuoc.text = simObj.originPrice
+        self.btGoiCuoc.setTitle(simObj.originPrice!, for: UIControlState.normal)
     }
 
     @IBAction func onTapbtAddShop(_ sender: UIButton) {
         delegate?.onTapButtonAddShopping(self)
+    }
+    
+    @IBAction func onTapbtGoiCuoc(_ sender: UIButton) {
+        delegate?.onTapButtonGoiCuoc(self)
     }
 }
